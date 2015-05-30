@@ -1,0 +1,18 @@
+@import "inoviostyle.scss";
+@import "font/myfont.scss";
+@import "addons.scss";
+@import "inoviologin.scss";
+ 
+@include myfont;
+.inoviostyle {
+  @include inoviostyle;
+  @include addons;
+  @include inoviologin;
+  body{
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}

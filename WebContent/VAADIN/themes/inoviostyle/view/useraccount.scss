@@ -1,0 +1,208 @@
+@mixin useraccount{
+	.ucmain{
+		width:100%;
+		height:100%;
+	}
+	.accbankpanel{
+		border-top:1px solid rgb(218, 218, 218);
+	}
+	
+	.uaatypel{
+		width:100%;
+		height:170px;
+		position:relative;
+	}
+	
+	 .uaactypecombo {
+		position: absolute;
+		top: 20px;
+	    left:210px;
+	}
+	
+	.premium1{
+		position:absolute;
+		top:15px;
+		left:390px;
+	}
+	
+	.premium2{
+		position:absolute;
+		top:15px;
+		left:530px;
+	}
+	
+	 .v-caption-uaactypecombo {
+		position: absolute;
+		top: 20px;
+	    left:20px;
+	    color:grey;
+	}
+	
+	 .uadaysleftlabel {
+		position: absolute;
+		bottom: 50px;
+	    top:75px;
+	    color:grey;
+	    left:210px;
+	    height:20px;
+	    width:auto !important;
+	}
+	
+	 .v-caption-uadaysleftlabel {
+		position: absolute;
+		bottom: 50px;
+	    color:grey;
+	    left:20px;
+	    top:75px;
+	    height:20px;
+	}
+	
+	 .uacreditlayout {
+		position: absolute;
+		bottom: 10px;
+	    left:20px;
+	    color:grey;
+	    top:125px;	    
+	    width:auto !important;
+	    max-width:110px;
+	    height:20px;
+	}
+	
+	.uaccreditlayout{
+		position:absolute;
+		left:210px;
+		top:125px;
+		background:url(../images/header-bg-stripe.png);
+	}
+
+    .uaccreditlayout2{
+      position:absolute;
+      left:210px;
+      top:125px;
+    }
+	
+	 .uacreditlabel {
+		color: #FFD700;
+		font-size: 12px;
+		font-weight: bold;
+		text-align: right;
+		width: auto !important;
+	    margin-bottom:2px;
+
+	}
+	
+	 .uaadvtype {
+		position: absolute;
+	    top:0px;
+	    left:20px;
+		color: grey;
+	}
+	
+	 .v-caption-uaadvtype {
+		position: absolute;
+	    color:grey;
+	    top:0px;
+	    left:210px;
+	}
+	
+	 .uaadvlabel {
+		position: absolute;
+	    top:20px;
+	    left:185px;
+		color: grey;
+	}
+	
+	.uaaddel{
+		position: absolute;
+		left: 188px;
+		width: 400px !important;
+		text-align: justify;
+		color: grey;
+	}
+	
+	.v-caption-uaaddel{
+	    color:grey;
+	    position:absolute;
+	    left:20px;
+	}
+	
+	.uaidinvdellabel {
+		position: absolute;
+		color: grey;
+		max-width: 50px;
+		top: 15px;
+		left: 210px;	
+	}
+	 .v-caption-uaidinvdellabel {
+		position: absolute;
+		color: grey;
+		max-width: 200px;
+		left: 20px;
+		top: 15px;
+	}
+	
+	 .uarecinvdellabel {
+		position: absolute;
+		color: grey;
+		max-width: 50px;
+		top: 55px;
+		left: 210px;
+	}
+	
+	 .v-caption-uarecinvdellabel {
+		position: absolute;
+		color: grey;
+		max-width: 200px;
+		display: inline;
+		top: 55px;
+		left: 20px;
+	}
+	
+	 .uacontdellabel {
+		position: absolute;
+		color: grey;
+		max-width: 50px;
+		top: 90px;
+		left: 210px;
+	}
+	
+	 .v-caption-uacontdellabel {
+		position: absolute;
+		color: grey;
+		max-width: 200px;
+		top: 90px;
+		left: 20px;
+	}
+	
+	 .uadelwplabel {
+		max-width: 200px;
+		position: absolute;
+		color: grey;
+		top: 130px;
+		left: 20px;
+	}
+	
+	 .uaisindwnb {
+		position: absolute;
+		left: 280px;
+		top: 5px;
+	}
+	
+	 .uarecindwnb {
+		position: absolute;
+		left: 280px;
+		top: 45px;
+	}
+	
+	 .uacontndwnb {
+		position: absolute;
+		left: 280px;
+		top: 85px;
+	}
+	
+	 .uadelworkspaceb {
+		position: absolute;
+		left: 280px;
+		top: 125px;
+	}
+}

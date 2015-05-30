@@ -1,0 +1,553 @@
+@mixin table{
+
+	.faktura-item-table .v-table-body {
+		min-height: 80px !important;
+		height: auto !important;
+		border:none;
+	}
+	.faktura-item-table .v-table-caption-container{
+		border:none;
+		padding:0 2px;
+	}
+	.faktura-item-table .v-table-header-wrap{
+		background-color: transparent;
+		background-image: none;
+		border:none;
+	}
+	.faktura-item-table.v-table{
+		background-color: transparent;
+	}
+	.faktura-item-table .v-table-cell-content{
+		border:none;
+	}
+	.faktura-item-table .v-table-table{
+		box-shadow:none;
+	}
+	.faktura-item-table .v-table-row-odd, .faktura-item-table .v-table-row{
+		background-color:transparent;
+	}
+	.faktura-item-table .v-table-resizer{
+		display:none;
+	}
+	.faktura-item-table .v-table-cell-wrapper{
+		padding:0 2px;
+	}
+	.total-calculate-table .v-table-body{
+	min-height:90px;
+	height: auto !important;
+	border:none;
+}
+.total-calculate-table .v-table-header-wrap{
+	background-image:none !important;
+	border:none;
+	border-bottom:2px solid $grey-light;
+}
+.total-calculate-table .v-table-caption-container{
+	color:grey;
+	text-transform:capitalize;
+	font-size:12px;
+}
+.total-calculate-table .v-table-resizer{
+	display:none !important;
+}
+.total-calculate-table .v-table-cell-content{
+	border:none !important;
+}
+.total-calculate-table .v-table-footer-wrap{
+	background:none !important;
+	border:none;
+	color:$font-color;
+	font-weight:bold;
+}
+.total-calculate-table .v-table-footer td{
+	border:none !important;
+}
+.total-calculate-table .v-table-footer-container{
+	text-align: right !important;
+	padding-right:1px !important;
+}
+.total-calculate-table .v-table-cell-wrapper{
+	padding:5px 1px;
+}
+	.myfiltertable.v-table{
+		position:absolute;
+		top:10px;
+		left:5px;
+		right:5px;
+		bottom:50px;
+	}
+	
+	.myfiltertable .v-table-header td{
+		padding-right: 1px;
+		padding-left: 1px;				
+	}
+		
+	  .myfiltertable .filters-wrap {
+		border: none;
+		width:99% !important;
+		padding-top:5px;
+	}
+	
+	.myfiltertable .v-table-body {
+		margin-top: 10px;
+		border: none;
+		overflow:auto;
+		height:calc(100% - 60px) !important;
+		width:100% !important;
+	}
+
+	
+	.myfiltertable .v-table-header{
+		height:99%;
+	}
+	  .myfiltertable  .filters-panel {
+		background: rgb(218, 218, 218);
+	}
+	
+	  .myfiltertable .v-table-column-selector,
+	  .myfiltertable .v-table-column-selector:active {
+		background-image:none;
+		float:left;
+	}
+	
+	.myfiltertable .v-table-header-cell-asc .v-table-sort-indicator,
+	.myfiltertable .v-table-header-cell-desc .v-table-sort-indicator{
+		background-image:none;
+		margin-top:5px;
+	}
+	
+	.myfiltertable .v-table-header-cell-asc .v-table-sort-indicator:after{
+		content: "\25BC";
+		color:white;
+	}
+	.myfiltertable .v-table-header-cell-desc .v-table-sort-indicator:after{
+		content: "\25B2";
+		color:white;
+	}
+	
+	
+	  .myfiltertable .v-table-column-selector:after{
+		
+		content:" \25B6";
+		color:white;
+		font-size:12px;
+		margin-left:5px;
+	}
+	
+
+	.myfiltertable .v-table-header-wrap{
+		width: 99% !important;
+		background-image: none;
+		border: none;
+		text-shadow: none;
+		color: white;
+		font-size: 12px;
+		border: 1px solid transparent;
+		@include border-radius(6px);
+		background: rgb(38, 126, 187);
+	}
+	
+	  .myfiltertable .v-table-header {
+		border:none;
+	}
+	
+	  .myfiltertable .filters-panel > div {
+		margin-left:0px;
+		margin-right:0px;
+		border-right:1px solid white;
+	}
+	
+	  .myfiltertable .filterfieldcomponent {
+		border-right:1px solid white !important;
+	}
+	
+	.myfiltertable .v-table-header-cell-asc, 
+	.myfiltertable .v-table-header-cell-desc{
+		background:url(../images/background-stripe.png) 0px 0px repeat-x !important;
+	}
+	
+
+	  .myfiltertable  .datefilterpopup .v-popupbutton,
+	  .myfiltertable  .datefilterpopup .v-popupbutton:focus {
+		background: none;
+	    background-color:rgb(218, 218, 218);
+	}
+	
+	  .myfiltertable .datefilterpopup .v-popupbutton .v-popup-indicator {
+		background: transparent url(../images/arrow-blue.png);
+		background-repeat: no-repeat;
+		background-left:2px solid white;
+	}
+	
+	  .myfiltertable .v-table-resizer {
+		font-size: 13px;
+		height: 1.8em;
+		background: transparent;
+		border-right:1px solid white;
+		width: 4px;
+	}
+	
+	.myfiltertable .v-table-focus-slot-right{
+		border-right:1px solid rgb(38, 126, 187) !important;
+	}
+	
+	  &.v-app .v-table.myfiltertable  input.v-textfield.v-widget {
+		height: 23px;
+		border: none;
+		background: rgb(218, 218, 218);
+	}
+	
+	  .myfiltertable .datefilterpopup .v-popupbutton,
+	  .datefilterpopup .v-popupbutton:focus {
+		background: rgb(218, 218, 218);
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		border: none;
+	}
+	
+	  .myfiltertable .v-table-cell-wrapper {
+		font-size: 12px;
+		padding-left:1px;
+	}
+	
+	  .myfiltertable .v-table-focus .v-table-cell-wrapper {
+		margin: 0px;
+	}
+
+	  .myfiltertable .v-table-row, 
+	  .myfiltertable .v-table-row-odd {
+		line-height: 2;
+		border: 2px solid transparent;
+		border-top: 2px solid transparent;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background:white;
+	}
+	
+	.myfiltertable .v-table-row:hover, 
+	 .myfiltertable .v-table-row-odd:hover{
+	 	border:2px solid blue;
+	 	padding-left:7px;
+	 	padding-right:7px;
+	  }
+
+	  .myfiltertable .v-table-cell-content {
+		padding-left:7px;
+		padding-right:7px;
+		border-top: 1px solid rgb(244, 240, 240);
+		border-bottom: 1px solid rgb(244, 240, 240);
+	}
+	
+	.myfiltertable .v-table-cell-content-unread{
+		font-weight:bold;
+		background:#E2E2E2;
+	}
+
+    .myfiltertable .v-table-cell-content-unread .v-selected{
+      font-weight:bold;
+      background: rgb(38, 126, 187);
+    }
+
+    .myfiltertable .v-table-cell-content-unreadaftermaturity{
+      font-weight:bold;
+      background: #e27462;
+    }
+
+    .myfiltertable .v-table-cell-content-unreadaftermaturity .v-selected{
+      font-weight:bold;
+      background: rgb(38, 126, 187);
+    }
+
+    .myfiltertable .v-table-cell-content-aftermaturity{
+      background: #e29b89;
+    }
+
+    .myfiltertable .v-table-cell-content-aftermaturity .v-selected{
+      background: rgb(38, 126, 187);
+    }
+	
+     .myfiltertable.v-table .v-selected {
+		background: rgb(38, 126, 187);
+	}
+	
+	
+    .myfiltertable.v-table .v-selected .v-table-cell-content {
+		border-top: 1px solid rgb(38, 126, 187);
+		
+	}
+	
+    .myfiltertable.v-table .v-selected .v-table-cell-content:last-child {
+		border-right: 1px solid rgb(38, 126, 187);
+		border-top: 1px solid rgb(38, 126, 187);
+		
+		-webkit-border-top-right-radius: 3px;
+		-moz-border-radius-topright: 3px;
+		border-top-right-radius: 3px;
+		-webkit-border-bottom-right-radius: 3px;
+		-moz-border-radius-bottomright: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+    .myfiltertable.v-table .v-selected .v-table-cell-content:first-child {
+		-webkit-border-top-left-radius: 3px;
+		-moz-border-radius-topleft: 3px;
+		border-top-left-radius: 3px;
+		-webkit-border-bottom-left-radius: 3px;
+		-moz-border-radius-bottomleft: 3px;
+		border-bottom-left-radius: 3px;
+		border-left: 1px solid rgb(38, 126, 187);
+		border-top: 1px solid rgb(38, 126, 187);
+		
+	}
+	
+	.myfiltertable.v-table .v-selected .v-table-cell-content:first-child:hover,
+	.myfiltertable.v-table .v-selected .v-table-cell-content:last-child:hover{
+		border-bottom: 1px solid rgb(46, 185, 237) !important;
+	}
+	
+	  .myfiltertable .v-table-row .v-table-cell-content:first-child,
+	  .myfiltertable .v-table-row-odd .v-table-cell-content:first-child {
+		border-left: 1px solid rgb(218, 218, 218);
+		border-top: 1px solid rgb(218, 218, 218);
+		border-bottom: 1px solid rgb(218, 218, 218);
+	}
+	
+	  .myfiltertable .v-table-row .v-table-cell-content,
+	  .myfiltertable .v-table-row-odd .v-table-cell-content {
+		border-top: 1px solid rgb(218, 218, 218);
+		border-bottom: 1px solid rgb(218, 218, 218);
+		border-right:1px solid transparent;
+	}
+	
+	  .myfiltertable .v-table-row-odd .v-table-cell-content:last-child,
+	  .myfiltertable .v-table-row.v-table-cell-content:last-child {
+		border-right: 1px solid rgb(218, 218, 218);
+		border-top: 1px solid rgb(218, 218, 218);
+		border-bottom:1px solid rgb(218, 218, 218);
+	}
+	
+	  .myfiltertable .v-table-cell-content:first-child {
+		-webkit-border-top-left-radius: 3px;
+		-moz-border-radius-topleft: 3px;
+		border-top-left-radius: 3px;
+		-webkit-border-bottom-left-radius: 3px;
+		-moz-border-radius-bottomleft: 3px;
+		border-bottom-left-radius: 3px;
+		border-left: 1px solid rgb(244, 240, 240);
+	}
+	
+	  .myfiltertable .v-table-cell-content:last-child {
+		-webkit-border-top-right-radius: 3px;
+		-moz-border-radius-topright: 3px;
+		border-top-right-radius: 3px;
+		-webkit-border-bottom-right-radius: 3px;
+		-moz-border-radius-bottomright: 3px;
+		border-bottom-right-radius: 3px;
+		border-right: 1px solid rgb(218, 218, 218);
+	}
+	
+	  .myfiltertable .v-table-row:hover .v-table-cell-content:first-child,
+	  .myfiltertable .v-table-row-odd:hover .v-table-cell-content:first-child {
+		border-left: 1px solid rgb(46, 185, 237);
+		border-top: 1px solid rgb(46, 185, 237);
+	}
+	
+	  .myfiltertable .v-table-row:hover .v-table-cell-content, 
+	  .myfiltertable  .v-table-row-odd:hover .v-table-cell-content {
+		border-bottom: 1px solid rgb(46, 185, 237);
+		border-top: 1px solid rgb(46, 185, 237);
+	}
+	
+	  .myfiltertable .v-table-row:hover .v-table-cell-content .tablearrowbutton,
+	  .myfiltertable .v-table-row-odd:hover .v-table-cell-content .tablearrowbutton {
+		display: block;
+	}
+	
+	  .myfiltertable .v-table-row:hover .v-table-cell-content .tableremovebutton,
+	  .myfiltertable .v-table-row-odd:hover .v-table-cell-content .tableremovebutton {
+		display: block;
+	}
+	
+	  .myfiltertable .v-table-row-odd:hover .v-table-cell-content:last-child,
+	  .myfiltertable .v-table-row:hover .v-table-cell-content:last-child {
+		border-right: 1px solid rgb(46, 185, 237);
+		border-top: 1px solid rgb(46, 185, 237);
+	}
+	
+	 .myfiltertable .v-table-header table, .myfiltertable  .v-table-table {
+		border-collapse: separate;
+		border-spacing: 0 0px;
+		padding-bottom:2px;
+	}
+	
+	  .myfiltertable .v-table-footer td {
+		border: none;
+	}
+	
+	  .myfiltertable .v-table-footer-wrap {
+		margin-top: 3px;
+		border: none;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background: rgb(218, 218, 218);
+		color: #6B6969;
+		height: 25px;
+		padding-top: 2px;
+		width: 98% !important;
+
+	}
+	
+	 .filterselectedfield{
+		background:url(../images/background-stripe.png) 0px 0px repeat-x !important;
+		color:white !important;
+	}
+	
+	 .v-popupview-popup{
+		box-shadow:0px 0px 5px #888888;
+	}
+	
+	.v-inline-datefield-calendarpanel-weekdays strong{
+		background:url(../images/background-stripe.png) 0px 0px repeat-x;
+	}
+	
+	.v-inline-datefield-calendarpanel-weekdays td{
+		color:white;
+		text-shadow:none;
+	}
+	
+	/**Contact Table**/
+	
+	.ctable .v-table-focus .v-table-cell-wrapper,
+	.ctable .v-table-cell-wrapper{
+		line-height:30px;
+	}
+	
+		/** Bank Table**/
+	.banktable .v-table{
+		margin-top:3px;
+	}
+	
+	.banktable .v-table-caption-container{
+		font-weight:bold;
+		color:grey;
+	}
+	
+	.banktable .v-table-header-wrap{
+		background:transparent;
+		text-shadow:none;
+		text-transform:none;
+		font-weight:normal;
+		border:none;
+		font-size:14px;
+		height:30px;
+	}
+	
+	.banktable .v-table-header{
+		height:27px;
+	}
+	
+	.banktable .v-table-body{
+		border:none;
+		height:100px;
+		overflow:hidden !important;
+	}
+	
+	.banktable .v-table-table{
+		
+	}
+	
+	.banktable .v-table-cell-content{
+		border:none;
+	}
+	
+	.banktable .v-table-row-odd{
+		background:transparent;
+	}
+	
+	.banktable .v-table-resizer{
+		border:none;
+		width:0px;
+	}
+	
+	.banktable .v-table-header-cell-asc .v-table-sort-indicator,
+	.banktable .v-table-header-cell-desc .v-table-sort-indicator{
+		display:none;
+	}
+	
+	/** Item Table**/
+	
+	.itemtable.v-table{
+		top:10px;
+	    right:0px;
+	    position:absolute;
+		height: auto;
+	}
+	
+	.itemtable .v-table-header-wrap{
+		background:transparent;
+		text-shadow:none;
+		text-transform:none;
+		font-weight:normal;
+		border:none;
+		font-size:12px;
+		height:30px;
+		color:grey;
+		font-weight:bold;
+	}
+	
+	.itemtable .v-table-header{
+		height:27px;
+		border-bottom:1px solid rgb(218, 218, 218);
+	}
+	
+	.itemtable .v-table-body{
+		border:none;
+		height:auto !important;
+		overflow:hidden !important;
+	}
+	
+	.itemtable .v-table-table{
+		
+	}
+	
+	.itemtable .v-table-cell-wrapper{
+		color:grey
+	}
+	
+	.itemtable .v-table-cell-content{
+		border:none;
+		border-bottom:1px solid rgb(218, 218, 218);
+	}
+	
+	.itemtable .v-table-row-odd{
+		background:transparent;
+	}
+	
+	.itemtable .v-table-resizer{
+		border:none;
+		width:0px;
+	}
+	
+	.itemtable .v-table-header-cell-asc .v-table-sort-indicator,
+	.itemtable .v-table-header-cell-desc .v-table-sort-indicator{
+		display:none;
+	}
+	.itemtable .v-table-footer-wrap{
+		background-image:none !important;
+		border-color:transparent !important;
+	}
+	
+	.itemtable .v-table-footer td{
+		border-color:transparent !important;
+		color:grey;
+		font-weight:bold;
+	}
+	
+	.itemtable .v-table-footer-container{
+		padding-right:5px !important;
+	}
+	
+}

@@ -1,0 +1,152 @@
+@mixin loginpage{
+
+	.loginpage{
+		margin-top: 70px;
+		display:block;
+		width:630px;
+		@include border-radius(6px);
+		border: 3px solid rgba(0, 0, 0, 0.3);
+		box-shadow: 7px 13px 35px 0px rgba(0, 0, 0, 0.2);
+		margin:0 auto 150px;
+		padding:0;
+		text-align:center;
+		color: #0d3b68;
+		font-size: 18px;
+		font-weight: 400;
+	}
+	.distancebottom{
+		margin:10px 0px;
+	}
+	.stroke{
+		position:relative;
+		margin:0;
+		padding: 30px 50px;
+		display:block;
+		@include border-radius(3px);
+		text-align:center;
+		background-color: rgba(255, 255, 255, 0.8);
+		background-image: -webkit-linear-gradient(90deg, rgba(222, 134, 21, 0.45) 0%, rgba(222, 134, 21, 0) 36%);
+		background-image: -moz-linear-gradient(90deg, rgba(222, 134, 21, 0.45) 0%, rgba(222, 134, 21, 0) 36%);
+		background-image: -o-linear-gradient(90deg, rgba(222, 134, 21, 0.45) 0%, rgba(222, 134, 21, 0) 36%);
+		background-image: linear-gradient(0deg, rgba(222, 134, 21, 0.45) 0%, rgba(222, 134, 21, 0) 36%);	
+	}
+	.stroke.leftdistance{
+		padding-left:180px;	
+	}
+	
+	#lock{
+		position:absolute;
+		top:100px;
+		left:0px;
+	}
+	#logo{
+		margin:0;
+		padding: 0 0 30px;
+		text-align:center;
+	}
+	
+	.loginlabel{
+		text-align:center;
+		font-size:18px;
+		line-height:30px;
+	}
+	
+	.loginfield{
+		width: 400px !important;
+		@include border-radius(5px);
+		border: 1px solid #a7c4e5;
+		background-color: #ffffff;
+		color: #287fbb !important;
+		line-height: 40px !important;
+		box-shadow: 0 0 7px 0px rgba(179, 205, 233, 0.75) inset;
+		text-align: center;
+		margin-bottom: 10px !important;
+		
+	}
+	&.v-app input.v-textfield-loginfield.v-widget{
+		height:40px;
+		font-size:18px;
+		color: #287fbb !important;
+	}
+	
+	.v-textfield-loginfield:focus{
+		border-width:2px;
+	}
+	
+	.v-caption-nocaption{
+		display:none;
+	}
+
+	.logincheckbox{
+		text-align:center;
+		font-size:15px;
+	}
+	
+	.loginsubmit{
+		font-family: Arial, sans-serif;
+		background-image: url('images/button-submit.png');
+		background-color:transparent;
+		border:none;
+		display: block;
+		color: #ffffff;
+		width: 296px;
+		height: 64px;
+		text-align:center;
+		text-transform: uppercase;
+		text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+		text-decoration:none;
+		box-shadow:none;
+		margin: 0 auto;
+		font-size:18px;
+		font-weight: normal;
+		line-height: 14px;
+		padding-bottom:10px;	
+		padding-top:20px;
+		margin-top:30px;
+	}
+	.loginsubmit:hover{
+		cursor:pointer;
+	}
+	
+	.lab2{
+		width:auto !important;
+		text-align:center;
+		line-height:initial !important;
+		margin-right:5px;
+	}
+	
+	.stbottomcontainer{
+		width:100%;
+		text-align:center;
+	}
+	.loginlink.v-link span{
+		//color:#d98e04;
+        color:white !important;
+		text-decoration:none !important;
+	}
+
+	 .loginlink.v-link a:hover span{
+		//color:#d98e04;
+        color:white !important;
+		cursor:pointer;
+	}
+
+    .loginpagelink{
+      color: #FFF !important;
+      font-size: 16px !important;
+      text-decoration: underline !important;
+      vertical-align: middle !important;
+    }
+
+    .inbody.v-csslayout{
+      display:block !important;
+    }
+
+    .loginpage.v-csslayout{
+      display:block !important;
+    }
+
+    .registrationpage.v-csslayout{
+      display:block !important;
+    }
+}

@@ -1,0 +1,59 @@
+@mixin window{
+	.v-window-outerheader{
+		background-image: url(../images/background-stripe.png);
+		background-color:transparent;
+		border-top-left-radius:6px;
+		border-top-right-radius:6px;
+	}
+	.v-window-header{
+		text-shadow:initial;
+	}
+	.v-shadow-window{
+		visibility:hidden !important;
+	}
+	
+	.v-window{
+		/** box-shadow:0px 0px 5px #888888; **/
+	}
+	
+	.v-window-closebox,
+	.v-window-closebox:hover {
+		background-size: 100% 100%;
+		background-image: url(../images/x-mark.png);
+	}
+	
+	.v-window-maximizebox, 
+    .v-window-maximizebox:hover, 
+	.v-window-maximizebox:active{
+		background-image:url(../images/square.png);
+		background-repeat:no-repeat;
+		background-size:95%;
+		background-position:2px;
+	}
+	
+	.v-window-footer,
+	.v-window-resizebox{
+		background-image: url(../images/background-stripe.png);
+	}
+	
+	.v-window-contents{
+		background:transparent;
+	}
+	
+	.v-window-wrap{
+		border:none;
+	}
+	
+	.v-window-contents > div{
+		border:1px solid rgba(0, 0, 0, 0.71) !important;
+		border-top:none;
+		border-bottom-right-radius:6px;
+		border-bottom-left-radius:6px;
+		background:white;
+	}
+
+    .invoicehelpwindow{
+      //background:transparent !important;
+      //background-color: transparent !important;
+    }
+}

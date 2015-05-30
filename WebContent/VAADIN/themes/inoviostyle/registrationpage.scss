@@ -1,0 +1,110 @@
+@mixin registrationpage{
+	.registrationpage{
+		display:block;
+		width: 600px;
+		@include border-radius(6px);
+		border: 3px solid rgba(0, 0, 0, 0.3);
+		box-shadow: 7px 13px 35px 0px rgba(0, 0, 0, 0.2);
+		margin:0 auto 150px;
+		padding:0;
+		text-align:center;
+		color: #0d3b68;
+		font-size: 18px;
+		font-weight: 400;
+        height: 1124px !important;
+	}
+	
+	.lseparator{
+		margin-left:5px;
+		margin-right:5px;
+		color:white;
+		font-size:16px;
+		width:auto !important;
+	}
+	.rplogo{
+		padding:0 0 30px;
+	}
+	.rpcaptsec{
+		text-align:center;
+		width:600px;
+		margin:0 auto;
+		display:block;
+		color:white;
+	}
+	
+	.rpl1{
+		padding:0 80px 0;
+		font-size: 26px;
+		line-height: 1.2;
+		margin: 0 auto;
+		font-family:'Arial', sans-serif;
+		clear:both;
+		font-weight:700;
+	}
+	
+	#rppoint ul{
+		margin:20px 0 20px 100px;
+		font-size:16px;
+		list-style:disc;
+		line-height:25px;
+	}
+	.textform{
+		margin-bottom:20px;
+	}
+	.v-caption-textform .v-captiontext {
+		font-size:18px;
+	}
+	
+	.rgoptiongroup, .v-caption-rgoptiongroup{
+		width:auto !important;
+		text-align:center;
+		font-size:18px;
+		margin-bottom:10px;
+        margin-left:-10px !important;
+	}
+
+	.rgoptiongroup.v-select-optiongroup .v-select-option{
+		display:inherit;
+        width: 200px !important;
+	}
+
+	.g-recaptcha{
+		width: 304px;
+		text-align:center;
+		margin:30px auto;	
+	}
+	
+	.v-textfield-errorfield{
+		border: 1px solid #c30f0f;
+		box-shadow: 0 0 7px 0px rgba(206, 65, 65, 0.75) inset;
+	}
+	.v-textfield-errorfield:focus{
+		border: 1px solid #c30f0f;
+		box-shadow: 0 0 7px 0px rgba(206, 65, 65, 0.75) inset;
+	}
+
+	.v-contexthelp-bubble.right .popupContent:before {
+		content: "";
+		display: block;
+		position: absolute;
+		border-right: 5px solid #cd3d3e;
+		border-top: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+		border-left: 5px solid transparent;
+		height: 1px;
+		width: 1px;
+		left: -5px;
+		top: 17px;
+		margin-left: -5px;
+	}
+	.v-contexthelp-bubble .popupContent .helpText {
+		background-color:#cd3d3e;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		padding: 15px;
+		color:white;
+		font-size: 11pt;
+	}
+
+}

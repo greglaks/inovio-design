@@ -1,0 +1,532 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+@import "mixins.scss";
+@import "font/myfont.scss";
+@import "components/layout.scss";
+@import "components/tab.scss";
+@import "components/table.scss";
+@import "components/button.scss";
+@import "components/label.scss";
+@import "components/textfield.scss";
+@import "components/window.scss";
+@import "components/jcrop.scss";
+@import "view/popup.scss";
+@import "view/othertab.scss";
+@import "view/personalinfo.scss";
+@import "view/bankaccount.scss";
+@import "view/myworkspace.scss";
+@import "view/users.scss";
+@import "view/issuedinvoice.scss";
+@import "view/notification.scss";
+@import "view/invited.scss";
+@import "view/useraccount.scss";
+@import "view/invoicetest.scss";
+
+$font-color:#626262;
+$grey-light:#E0E0E0;
+$light-blue:#197de1;
+
+@mixin inoviostyle {
+
+  @include reindeer;
+  @include invoicetest;
+  @include layout;
+  @include tab;
+  @include table;
+  @include button;
+  @include label;
+/*  @include textfield; */
+  @include personalinfo;
+  @include bankaccount;
+  @include othertab;
+  @include window;
+  @include jcrop;
+  @include popup;
+  @include myworkspace;
+  @include users;
+  @include issuedinvoice;
+  @include notification;
+  @include invitation;
+  @include useraccount;
+
+  &.v-app, .FlatUI .v-window,  .v-popupview-popup, .v-tooltip, 
+  &.v-app input, &.v-app select, &.v-app button, 
+  &.v-app textarea,  .v-window input,  .v-window select, 
+   .v-window button,  .v-window textarea,  .v-popupview-popup input, 
+   .v-popupview-popup select,  .v-popupview-popup button, .v-caption,
+   .v-popupview-popup textarea,  .v-filterselect-suggestpopup, 
+   .v-datefield-popup,  .v-contextmenu,  .v-Notification, 
+   .v-menubar-submenu,  .v-drag-element,  .v-table-header-drag, v-caption, .v-label,
+   .v-app input{
+  		font:300 12px "Open Sans", sans-serif;
+  		color:$font-color;
+  }
+
+
+
+  .v-disabled{
+  	opacity:0.6 !important;
+  }
+
+
+	.v-loading-indicator,
+	.v-loading-indicator-delay{
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		z-index: 30000;
+		width: 31px;
+		height: 31px;
+	    background-attachment:fixed;
+	    background-repeat:no-repeat;
+		margin-right: 5px;
+		margin-top: 5px;
+	}
+	
+
+
+  	
+
+   	:focus {outline:none;}
+   
+  	::-webkit-scrollbar {
+    	width: 6px;
+    	height: 6px;
+	}
+	
+	
+	 
+	/* Track */
+	::-webkit-scrollbar-track {
+		
+	}
+	 
+	/* Handle */
+
+	::-webkit-scrollbar-thumb {
+		width:6px; 
+		background:rgba(165, 165, 165, 1); 
+	}
+	
+	 ::-webkit-scrollbar-thumb:hover {
+		width: 6px;
+		background: rgba(105, 104, 104, 1); 
+	}
+	
+	::-webkit-scrollbar-thumb:active {
+		width: 6px;
+		background: rgba(70, 70, 70, 1); 
+	}
+
+	
+	::-webkit-scrollbar-thumb:window-inactive {
+		
+		background: rgba(105, 104, 104, 1); 
+	}
+
+	
+	.logo{
+		position: relative;
+		margin-bottom: 3px;
+	    float:left;
+		left: 5px;
+		top:5px;
+	}
+	
+	.commentarphoto{
+		position:absolute;
+		top:0px;
+		left:0px;
+	}
+	
+	.cocompostem{
+		position:absolute;
+		top:10px;
+		left:0px;
+	}
+	
+	.scanadobe{
+		position: absolute;
+		left: 3px;
+		height: 100% !important;
+		width: 99% !important;
+	}
+
+    .scanimage{
+      position: absolute;
+      left: 3px;
+      overflow: auto !important;
+    }
+	
+	.utcombo{
+		margin-top:10px;
+		margin-left:30px;
+		width:50px;
+	}
+
+	
+	 .v-shadow{
+		display:none;
+	}
+	
+		/* ContextMenu */
+	.v-contextmenu{
+		background: #343638;
+		background: rgba(52, 54, 56, 0.92);
+		-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+		color: #fff;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+		padding: 4px;
+		-webkit-border-radius: 0.3em;
+		-moz-border-radius: 0.3em;
+		border-radius: 0.3em;
+		border: none;
+		opacity: 1;
+	}
+	
+	.v-contextmenu .gwt-MenuItem-selected{
+		background:url(../inoviostyle/images/background-stripe.png) 0px 0px repeat-x;
+		color: #fff;
+	}
+	
+	.v-contextmenu .gwt-MenuItem-selected div{
+		color:white;
+		background:transparent;
+		text-shadow:none;
+	}
+	
+
+	.mbusetting.v-menubar{
+		position: absolute;
+		border: none;
+		bottom: 6px;
+		right: 8px;
+		width:15px;
+		background:none;
+	}
+
+	.mbusetting.v-menubar .v-menubar-menuitem-selected {
+		background-image: none;
+		background-color: initial;
+		position: absolute;
+		left: -2px;
+		width:15px;
+		background-position:1px 10px !important;
+	}
+
+	.mbusetting.v-menubar .v-menubar-menuitem{
+		background-image: url(images/icon-user-settings.png);
+		background-repeat: no-repeat;
+		background-position:1px 7px !important;
+		background-size: 13px;
+		width: 15px;
+		left: 0px;
+		position: absolute;
+		top:2px;
+	}
+
+	.mbusetting.v-menubar .v-menubar-menuitem:hover{
+		cursor:pointer;
+	}
+
+    .ifilter_active.v-menubar{
+      border: none;
+      position: absolute;
+      right: 61%;
+      top: 12px;
+      width: 28px !important;
+      height: 28px !important;
+      background:none;
+    }
+
+    .ifilter_active.v-menubar .v-menubar-menuitem-selected {
+      background-image: none;
+      background-color: initial;
+      position: absolute;
+      left: 0px;
+      top:-5px;
+      width:15px;
+      background-position:1px 10px !important;
+    }
+
+    .ifilter_active.v-menubar .v-menubar-menuitem{
+      background-image: url(images/filter_delete.png);
+      background-repeat: no-repeat;
+      background-position:1px 7px !important;
+      background-size: 28px;
+      width: 28px;
+      height: 28px;
+      left: 0px;
+      position: absolute;
+      top:-5px;
+    }
+
+    .ifilter_active.v-menubar .v-menubar-menuitem:hover{
+      cursor:pointer;
+    }
+
+    .ifilter_inactive.v-menubar{
+      border: none;
+      position: absolute;
+      right: 61%;
+      top: 12px;
+      width: 28px !important;
+      height: 28px !important;
+      background:none;
+    }
+
+    .ifilter_inactive.v-menubar .v-menubar-menuitem-selected {
+      background-image: none;
+      background-color: initial;
+      position: absolute;
+      left: 0px;
+      width:15px;
+      background-position:1px 10px !important;
+      top:-5px;
+    }
+
+    .ifilter_inactive.v-menubar .v-menubar-menuitem{
+      background-image: url(images/filter_add.png);
+      background-repeat: no-repeat;
+      background-position:1px 7px !important;
+      background-size: 28px;
+      width: 28px;
+      height: 28px;
+      left: 0px;
+      position: absolute;
+      top:-5px;
+    }
+
+  .ifilter_inactive.v-menubar .v-menubar-menuitem:hover{
+    cursor:pointer;
+  }
+
+	.v-menubar .v-menubar-menuitem-selected, .v-menubar-submenu .v-menubar-menuitem-selected{
+		background: rgb(122,188,255); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(122,188,255,1) 0%, rgba(96,171,248,1) 52%, rgba(64,150,238,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(122,188,255,1)), color-stop(52%,rgba(96,171,248,1)), color-stop(100%,rgba(64,150,238,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 52%,rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 52%,rgba(64,150,238,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 52%,rgba(64,150,238,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(122,188,255,1) 0%,rgba(96,171,248,1) 52%,rgba(64,150,238,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+		text-shadow:none;
+		color:white;
+	}
+
+
+	.v-menubar-submenu .v-menubar-submenu-indicator{
+		background:transparent url(images/arrowsubmenuwhite.png) no-repeat right 70%;
+	}
+
+	.v-menubar-submenu .v-menubar-menuitem-selected .v-menubar-submenu-indicator{
+		background:transparent url(images/arrowsubmenuwhite.png) no-repeat right 70%;
+	}
+
+	.v-menubar-submenu{
+		background: rgba(52, 54, 56, 0.92);
+		-webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+		color: #fff;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+		padding: 4px;
+		-webkit-border-radius: 0.3em;
+		-moz-border-radius: 0.3em;
+		border-radius: 0.3em;
+		border: none;
+		opacity: 1;
+		width:auto;
+	}
+
+    .v-menubar-submenu-mbusetting{
+      background: rgba(52, 54, 56, 0.92) !important;
+      -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      color: #fff !important;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+      padding: 4px !important;
+      -webkit-border-radius: 0.3em;
+      -moz-border-radius: 0.3em;
+      border-radius: 0.3em !important;
+      border: none !important;
+      opacity: 1;
+      width:auto;
+    }
+
+	/** Additional CSS for Workpackage 3**/
+		 input[type=checkbox] {  
+	    display: none;  
+	 }
+	  
+	 input[type=checkbox] + label::before{
+		content: "";
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+		line-height: 13px;
+		margin: 0 8px 0 0;
+		background:white;
+		border:1px solid #bcbdbe;
+		vertical-align: middle;
+	}
+	
+	 input[type=checkbox]:checked + label:before {  
+	    color:rgb(1, 154, 220);
+		content: "\2714";
+		font-size: 18px;
+		text-align: center;
+		overeflow:hidden;
+		line-height: 11px;
+		background-color:rgb(249, 250, 255);
+	}  
+	
+   .v-checkbox label{
+   	color:grey;
+   }
+   
+   .v-link span{
+   		text-decoration:none;	
+   }
+   
+   .v-link span:hover{
+   		text-decoration:underline;
+   }
+   .hidesuggest .v-filterselect-suggestpopup{
+	display:none;
+   }
+   .v-filterselect-suggestpopup{
+   		min-height:25px !important;
+   		background:rgba(52, 54, 56, 0.92);
+   		color:white;
+   		box-shadow:0 1px 1px rgba(0, 0, 0, 0.5);
+   		-webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.5);
+   		-moz-box-shadow:0 2px 5px rgba(0, 0, 0, 0.5);
+   }
+   
+   .v-filterselect-nextpage span{
+   		background-image: url(../inoviostyle/images/arrowdownsmall.png) !important;
+   		background-color:transparent;
+   		background-size:10px;
+   }
+  
+   .v-filterselect-prevpage span{
+   		background-image: url(../inoviostyle/images/arrowupsmall.png) !important;
+   		background-color:transparent;
+   		background-size:10px;
+   }
+   
+   .v-filterselect-nextpage:hover span,
+   .v-filterselect-prevpage:hover span{
+   		background-color:rgba(3, 3, 7, 0.48);
+   }
+   
+   .v-filterselect-status{
+   		color:black;
+   		text-shadow:#A4A6A8 0 1px 0;
+   }
+   
+   
+   
+  .v-datefield-popupcalendar .v-datefield-button {
+		background-image: url(../inoviostyle/images/datefieldbutton.png);
+		background-repeat: no-repeat;
+		background-size: 85% 80%;
+		background-position: center;
+		height: 23px;
+		border-bottom-right-radius: 3px;
+		border-top-right-radius: 3px;
+		background-color: #F0F1F1;
+		border: 1px solid #bcbdbe;
+	}
+	
+	.datefilterpopup .v-popupbutton, .datefilterpopup .v-popupbutton:focus {
+		background: rgb(233, 243, 249);
+		border: none;
+		height: 25px;
+		border-left: 1px solid rgba(91, 151, 208, 0.34);
+	}
+	
+	.v-datefield-popupcalendar input.v-datefield-textfield {
+		background: white;
+		height:30px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;		
+	}
+
+	
+	.v-datefield-popupcalendar{
+		@include border-radius(3px);
+		@include box-shadow(inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1));
+	}
+	
+	.v-datefield-popupcalendar input.v-datefield-textfield{
+		background:white;
+		height:30px;
+	}
+	
+	.v-datefield-popupcalendar input.v-datefield-textfield:focus{
+		background:none;		
+	}
+
+	
+	.v-sa & .v-datefield-popup{
+		background:white;
+		font-family:inherit;
+		text-shadow:none;
+		border: 1px solid grey;
+	}
+
+	.v-datefield-calendarpanel-day-selected{
+		background:url(../inoviostyle/images/background-stripe.png) 0px 0px repeat-x;
+	}
+	
+	.v-datefield-calendarpanel-weekdays td{
+		text-shadow:none;
+		color:white;
+	}
+	
+	.v-datefield-calendarpanel-weekdays strong{
+		background:url(../inoviostyle/images/background-stripe.png) 0px 0px repeat-x;
+	}
+	
+
+	.dvbutton{
+		top:5px;
+	}
+
+	.floatleft{
+		float:left;
+	}
+
+	.floatright{
+		float:right;
+	}
+
+	.distancetop{
+		margin-top:10px;
+	}
+
+   .rpositioning{
+   	position:relative;
+   }
+
+   .singlelined{
+		display:block !important;
+		width:100%;
+   }
+   .v-errorindicator{
+	position:absolute;
+   }
+
+   .cbcommentpos{
+		position:absolute;
+		bottom:15px;
+		left:90px;
+   }
+}

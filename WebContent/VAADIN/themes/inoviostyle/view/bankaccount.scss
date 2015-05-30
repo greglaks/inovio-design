@@ -1,0 +1,139 @@
+@mixin bankaccount{
+
+	.bamain{
+		position:relative;
+	}	
+	.bapc{
+		position:absolute;
+		top:40px;
+		left:0px;
+		height: calc(100% - 40px);
+		width:100%;
+		overflow-y:auto !important;
+	}
+
+	.balwr{
+		position:relative;
+		width:100%;
+		height:auto;
+	}
+	
+
+	.baacbb{
+		position: relative;
+		float: left;
+		margin-bottom: 20px;
+		margin-left: 40px;
+		top: 5px !important;
+	}
+
+	
+	/**Bank Account Item**/
+	
+	.baitemlayout{
+		width: 98%;
+		height: 125px;
+		margin-left: 10px;
+		position: relative;
+		display: block !important;
+		border-bottom: 1px solid rgb(218,218,218);
+	}
+	
+	.baitemlayout:hover .babindelb {
+		display: block;
+	}
+
+	.babindelb {
+		background-image: url(../images/kos16x16-cervena.png);
+	    background-repeat:no-repeat;
+	    height:20px;
+	    width:20px;
+	    display:none;
+	    background-size:94%;
+	}
+	
+	.babindelb:hover{
+		cursor:pointer;
+	}
+	
+	.babindelposb{
+		position:absolute;
+		left:0px;
+		top:10px;
+	}
+
+	.baitemprimaryb{
+		position: absolute;
+		top: 80px;
+		left: 240px;
+	}
+	
+	 .baat {
+		position: absolute;
+		width: 200px !important;
+		left:30px;
+	    top:10px;
+	}
+	
+	 .bactext {
+		position: absolute;
+		width: 240px !important ;
+	    top:10px;
+	    left:240px;
+	}
+	
+	 .bavatcb {
+		position: absolute;
+		height: 10px;
+		left: 365px;
+		top: 40px;
+	}
+	
+	 .badelb {
+		position: absolute;
+	    top:80px;
+	}
+	
+	 .baibant {
+		position: absolute;
+	    left:30px;
+	    top:40px;
+		width: 200px !important;
+	}
+	
+	 .baswt {
+		position: absolute;
+		width: 100px !important;
+		left:240px;
+	    top:40px;
+	}
+	
+	 .badta {
+		position: absolute;
+		width: 185px !important;
+		height: 55px !important;
+		left: 490px;
+		top: 10px;
+		overflow-y:auto;
+	}
+	
+	.batsla{
+		position:absolute;
+		top:85px;
+		left:30px;
+		width:200px !important;
+	}
+
+	
+/**	
+	.bacvatcompos{
+		margin-bottom:5px !important;
+		margin-top:5px !important;
+	}
+	
+	.baspcom{
+		position:relative;
+	}
+	
+**/
+}

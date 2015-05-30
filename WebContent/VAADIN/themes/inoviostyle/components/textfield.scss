@@ -1,0 +1,724 @@
+@mixin textfield{
+	&.v-app  input[type="text"].v-textfield-faktur,
+	&.v-app input.v-textfield-faktur.v-widget{
+		font-size:12px;
+		height:25px;		
+		border:1px dotted grey;
+	}
+	
+	.v-textfield-faktur{
+		background-image:none;
+		border:none;
+		border:1px dotted transparent;
+		width:100%;
+	}
+
+    .v-datefield-faktur{
+      background-image:none;
+      border:none;
+      border:1px dotted transparent;
+      width:100% !important;
+    }
+
+	.textform{
+		width: 80px !important;
+	}
+	
+	&.v-app  input[type="text"].v-textfield-faktur:hover,
+	&.v-app  input[type="text"].v-textfield-faktur:focus{
+		border:1px dotted #267EBB;
+	}
+	
+	.fakturaddress{
+		width:70px;
+		height:70px;
+	}
+
+	 .fakturnumber {
+		position: relative;
+		top: 30%;
+		height: 40px !important;
+		font-size: 18px !important;
+		text-align: right;
+		font-weight: bold;
+		float: right;
+		width: 130px;
+	}
+	
+	.fakturincomingnumber{
+      position: relative;
+      top: 75%;
+      height: 20px !important;
+      font-size: 12px !important;
+      text-align: right;
+      font-weight: bold;
+      float: right;
+      width: 130px;
+      right: -130px;
+    }
+
+	&.v-app textarea.v-textarea-faktur{
+		font-size:12px;
+		border:1px dotted grey;
+	}
+	
+	 textarea.v-textarea-faktur {
+		border: none;
+		background: none;
+	    border:1px dotted grey;
+	    width:160px;
+	    height:45px;
+	}
+	
+	 textarea.v-textarea-faktur:hover,
+	 textarea.v-textarea-faktur:focus{
+	    border:1px dotted #267EBB;
+	}
+	
+	.texthalfwidth{
+		width:75px !important;
+	}
+	
+	/** Textfield for Recipient **/
+	
+	&.v-app input[type="text"].v-textfield-recipientname{
+		font-weight:bold;
+	}
+	
+
+	/** Textfield for bank**/
+	
+	
+	&.v-app  input[type="text"].v-textfield-bank{
+		font-size:12px;
+		height:21px;		
+	}
+	
+	.v-textfield-bank{
+		background-image:none;
+		border:none;
+		border:1px dotted transparent;
+		width:100%;
+	}
+	
+	.v-textfield-bank:hover{
+		border:1px dotted #267EBB;
+	}
+	
+	.v-textfield-bank:focus{
+		border:1px dotted rgb(217,243,253);
+	}
+	
+
+	&.v-app textarea.v-textarea-bank{
+		font-size:12px;
+	}
+	
+	 textarea.v-textarea-bank {
+		border: none;
+		background: none;
+	    border:1px dotted transparent;
+	    width:160px;
+	    height:45px;
+	}
+	
+	 textarea.v-textarea-bank:hover{
+	    border:1px dotted #267EBB;
+	}
+	
+	 textarea.v-textarea-bank:focus{
+	    border:1px dotted rgb(217,243,253);
+	}
+
+
+	
+	/** Bank Symbol text**/
+	
+	.textform{
+		width:120px;
+	}
+	
+	/**&.v-app  input[type="text"].v-textfield-bankvssymbol**/
+
+		
+	.v-filterselect-suggestmenu .gwt-MenuItem-selected {
+		background: url(../images/background-stripe.png) 0px 0px repeat-x;
+		color: #fff;
+		text-shadow: #3b5a7a 0 1px 0;
+	}
+	
+	&.v-app .fakturacombo input.v-filterselect-input {
+		height:25px;
+		font-size:12px !important;
+		width:100% !important;
+		border: 1px dotted grey;
+	}
+	
+	.fakturacombo .v-filterselect-button, 
+	.fakturacombo .v-filterselect-button:active, 
+	.fakturacombo .v-filterselect-button:hover
+	{
+		background-image:none !important;
+		position:absolute;
+		right:20px;
+		height:22px;
+		width:20px;
+		opacity:0.5;
+	}
+
+	.fakturacombo .v-filterselect-button:after{
+		content:"\25BC";
+		color:grey;
+		top:2px;
+		position:absolute;
+        left:0px;
+	}
+
+	.fakturacombo.v-filterselect,
+	.fakturacombo .v-filterselect:hover, 
+	.fakturacombo .v-filterselect:active{
+		position:relative;
+		background:rgb(240, 240, 240);
+		border:none;
+		padding-left:0px;
+		padding-right:0px;
+        top: -1px;
+	}
+	
+
+	&.v-app .fakturacombo .v-filterselect-input{
+		border:none;
+		background:none;
+		@include border-radius(3px);
+		border:1px dotted grey;
+	}
+	
+	&.v-app .fakturacombo .v-filterselect-input:hover,
+	&.v-app .fakturacombo .v-filterselect-input:focus{
+		border:1px dotted #267EBB;
+	}
+	
+	.v-caption-date1 .v-captiontext{
+		position:relative;
+		top:8px;
+		color:grey;
+	}
+		
+	&.v-app  input[type="text"].v-textfield-date1{
+		position: relative;
+		font-size: 12px;
+		height: 21px;
+		left: 65px;
+		top: -11px;
+	}
+	
+	.v-caption-date2 .v-captiontext{
+		position:relative;
+		top: -2px;
+		color:grey;
+	}
+		
+	&.v-app  input[type="text"].v-textfield-date2{
+		position: relative;
+		font-size: 12px;
+		height: 21px;
+		left: 65px;
+		top: -20px;
+	}
+	
+	.v-caption-date3 .v-captiontext{
+		position:relative;
+		top: -12px;
+		color:grey;
+	}
+		
+	&.v-app  input[type="text"].v-textfield-date3{
+		position: relative;
+		font-size: 12px;
+		height: 21px;
+		left: 65px;
+		top: -29px;
+	}
+
+	
+	/**Faktur item**/
+	
+	 .descriptionitem {
+		width: 130px !important;
+		height: 70px !important;
+		
+	}
+
+    .descriptionfakturatextsmall{
+      width: 100% !important;
+      height:30px !important;
+      margin-top:10px !important;
+    }
+	
+	.descriptionfakturatext{
+		width: 100% !important;
+	    height:60px !important;
+	    margin-top:10px;
+	}
+	/** Bank **/
+	.bankss .v-filterselect-button, .bankss .v-filterselect-button:hover{
+		background-image:none;
+	}
+	
+	 .bank2 {
+		width: 90px !important;
+		text-align: left;
+	    font-size:18px !important;
+	    font-weight:bold;
+	    height:40px !important;
+	    margin-left:10px;
+	}
+	
+
+	&.v-app .bankss .v-filterselect-input 
+	{
+		background-image:none;
+		@include border-radius(3px);
+	}
+	
+	&.v-app .bankss .v-filterselect-input:focus{
+		border:1px dotted rgb(217,243,253);
+	}
+	
+	&.v-app .bankss .v-filterselect-input:hover{
+		border:1px dotted #267EBB;
+	}
+	&.v-app .bankss .v-filterselect-input{
+		font-size: 18px;
+		font-weight: bold;
+		width: 150px !important;
+		height: 40px !important;
+		border:1px dotted grey;
+	}
+	.bankss.v-filterselect{
+		background-image:none;
+		height:40px !important;
+	}
+	
+	.v-filterselect-prompt .v-filterselect-input{
+		font-size:12px !important;
+		font-weight: normal !important;
+		text-align:center !important;
+		color:grey;
+	}
+	
+	 .bank2.v-textfield-prompt{
+	 	font-size:12px !important;
+		font-weight: normal !important;
+	 }
+	 
+	  input.v-textfield-prompt{
+	  	text-align:center !important;
+	  }
+	  
+	  input.v-textfield-readonly{
+	  	border:none !important;
+	  }
+	  
+	  .formelement{
+	  	width:50% !important;
+	  }
+	  .v-caption-formelement .v-captiontext{
+	  font-size:12px;
+	 }
+
+	 
+	 /** Faktura ComboBox **/
+	 .fakturacombobox.v-filterselect{
+	 		background:none;
+	 		height:40px;
+	 }
+ 
+	 .fakturacombobox .v-filterselect-input{
+	 	background:none;	
+	 	font-size:18px;
+	 }
+	 
+	 .fakturacombobox .v-filterselect-button, .fakturacombobox .v-filterselect-button:hover{
+	 	background:none;
+	 }
+	
+	 &.v-app .fakturacombobox .v-filterselect-input{
+	 	background:none;
+	 	height:40px;
+	 	font-size:18px !important;
+	 	border:1px dotted grey;
+	 	@include border-radius(3px);
+	 }
+	 
+	   &.v-app .fakturacombobox .v-filterselect-input:hover,
+	   &.v-app .fakturacombobox .v-filterselect-input:focus{
+	 		border:1px dotted #267EBB;
+	 }
+	 
+	 .fakturacomboboxlocation{
+		position: relative;
+		margin-top:10px;
+	    float:left;
+	 }
+	 
+
+	.replycommenttext.v-textarea{
+		border: 1px solid rgb(213, 213, 213);
+		height: 96%;
+		width: 73%;
+		@include border-radius(6px);
+		background: transparent;
+		margin-left: 4px;
+		margin-top: 5px;
+	}
+
+	
+	.bankcode.v-filterselect{
+		width: 98%;
+		margin-left: auto;
+		padding-right:0px;
+		text-align:left;
+		display:block;
+	}
+	
+	&.v-app .bankcode .v-filterselect-input{
+		width:100% !important;
+		text-align:center;
+	}
+	
+	.fakturitemtable.v-filterselect, 
+	&.v-app input[type="text"].v-textfield-fakturitemtable{
+		width:100% !important;
+		height:25px !important;
+	}
+	&.v-app .fakturitemtable input.v-filterselect-input{
+		text-align:center !important;
+	}
+	
+	.mardistb{
+		margin-top:1px !important;
+		margin-bottom:1px !important;
+	}
+	
+	.leftalign{
+		text-align:left ;
+	}
+	
+	.rightalign{
+		text-align:right;
+	}
+	
+	.centeralign{
+		text-align:center;
+	}
+
+	.commenttextarea{
+		position: absolute;
+		bottom: 20px;
+		left: 90px;
+		height:120px;
+		width:490px !important;
+	}
+	
+	.emailtextarea.v-richtextarea .gwt-RichTextArea{
+		height:145px !important;
+	}
+	
+	.textcodr{
+		width:50px !important;
+	}
+	
+	.textcir{
+		width:120px !important;
+		margin-bottom:1px !important;
+		margin-left:10px !important;
+	}
+	
+	
+	 .v-caption-plw{
+	    width:0px ;
+	    height:0px;
+	}
+	 .v-caption-plw .v-captiontext{
+	    position:relative;
+	    margin-top:15px;
+	    margin-left:60px;
+	    color:grey;
+	}
+	 .plw {
+		width: 100px !important;
+	    position:relative;
+	    margin-left:110px;
+	    margin-top:10px;
+	}
+
+    /*.v-caption-plw2{
+      width:0px ;
+      height:0px;
+    }*/
+    .v-caption-plw2 .v-captiontext{
+      position:relative;
+      margin-top:0px;
+      margin-left:0px;
+      color:grey;
+    }
+    .plw2 {
+      width: 100% !important;
+      position:relative;
+      margin-left:0px;
+      margin-top:0px;
+    }
+	 .v-caption-flobjalign{
+	    width:0px;
+	    height:0px;
+	}
+	 .v-caption-flobjalign .v-captiontext{
+	    color:grey;
+	    margin-top:10px;
+	    margin-left:5px;
+	}
+	 .flobjalign {
+	    position:relative;
+	    margin-left:110px !important;
+	    margin-top:8px !important;
+        width: 100px !important;
+	}
+	 .v-caption-facucb{
+	    width:0px;
+	    height:0px;
+	}
+	 .v-caption-facucb .v-captiontext{
+	    color:grey;
+	    margin-left:65px;
+	    margin-top:10px;
+	}
+	 .facucb {
+		width: 100px !important;
+	    position:relative;
+	    margin-left:110px;
+	    margin-top:7px;
+	}
+	
+	
+	/** Rich text area for commentar**/
+	
+	
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar-bottom{
+		display:none;
+	}
+	
+	.commenttextarea.v-richtextarea .gwt-RichTextArea{
+		height:85px;
+	}
+	
+	.commenttextarea.v-richtextarea{
+		font-family: "Roboto", Arial, sans-serif;
+	}
+
+	.commenttextarea.v-richtextarea{
+		@include border-radius(6px);
+		border:1px dotted grey;
+	}
+	
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar{
+		background: rgb(235, 235, 235);
+	}
+	
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar-top{
+		padding:3px 5px 3px 5px;
+	}
+	
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar{
+		border-bottom:1px dotted grey;
+	}
+	
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton,
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton{
+		margin-left:2px;
+		@include border-radius(3px);
+		background:transparent;
+	}
+	
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton:hover,
+	.commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton:hover{
+		background:url(../images/background-stripe.png) 0px 0px repeat-x;	
+	}
+	
+	 .commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down, 
+	 .commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down, 
+	 .commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering,
+	 .commenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering{
+		background:rgb(38, 126, 187);
+	}
+	
+	
+	textarea.v-textarea-prompt{
+		text-align:center;
+	}
+	
+	input.v-textfield-prompt, textarea.v-textarea-prompt{
+		color:grey;
+	}
+	
+	.attcom{
+		width: 300px !important;
+		height: 40px !important;
+		position: absolute;
+		right:80px;
+	    bottom:15px;
+	}
+	
+	
+	
+	
+	.focuscalcfield{
+		background:url(../images/background-stripe.png) 0px 0px repeat-x !important;
+		color:white !important;
+		opacity:1;
+	}
+	
+	.farmb{
+		position:relative;
+		width:20px;
+		display:initial !important;
+	}		
+	.faiqt{
+		width: 7% !important;
+		margin-right: 5px !important;
+		text-align:right !important;
+	}
+	.faitnt{
+		width: 42% !important;
+		margin-right: 5px !important;
+		margin-left:5px !important;
+		margin-top:5px!important;
+	}
+	
+	.faiumt{
+      width: 7% !important;
+      margin-right: 5px !important;
+	}
+	
+	.faupt{
+		width: 15% !important;
+		text-align:right !important;
+		margin-right: 5px !important;
+	}
+	
+	.fatrc{
+		position:relative;
+		top:-1px !important;
+        /*width: 6% !important;*/
+		width: 6.8% !important;
+		margin-right:5px !important;
+		text-align:right !important;
+	}
+	
+	.faamt{
+		width: 15% !important;
+		float:right;
+		text-align:right !important;
+		margin-top:5px !important;
+	}
+	
+	.fadest{
+		width: calc(100% - 25px) !important;
+		position: absolute;
+		left: 25px;
+		top: 35px;
+	}
+	
+	.fapainaddt{
+		position: relative;
+	    width:200px !important;
+	    margin-right:5px !important;
+		float:left;
+	}
+	
+	.fapinadt{
+		position:relative;
+		width:91px !important;
+		float:right;
+		text-align:right;
+	}
+	
+	.excrta{
+		text-align:right;
+	}
+
+	 .formcomponentdic {
+		position: relative;
+		width:100px !important;
+		margin-top:3px;
+	}
+	
+	 .v-caption-formcomponentdic .v-captiontext {
+		position: relative;
+		width: auto !important;
+		display: inline;
+		margin-right: 12px;
+		color: grey;
+	}
+	
+	 .v-caption-formcomponentdic {
+		position: relative;
+		display: inline;
+		/* margin-right: 10px; */
+	}
+
+    .formcomponentares{
+      position:relative;
+      right:0px !important;
+      left:15px !important;
+    }
+	
+	.formcomponentic {
+		position: relative;
+		width: 100px !important;
+		margin-top:1px;
+	}
+	
+	.v-caption-formcomponentic .v-captiontext {
+		position: relative;
+		width: auto !important;
+		display: inline;
+		margin-right: 10px;
+		color: grey;
+	}
+	
+	.v-caption-formcomponentic {
+		position: relative;
+		display: inline;
+		margin-right: 10px;
+	}
+
+	.pricetextedit{
+		position: absolute;
+		bottom: 18px;
+		right: 0px;
+		width: 90px;
+	}
+
+    .ibanstyle{
+        width: 225px;
+        margin-left: 4px !important;
+    }
+
+    .swiftstyle{
+        width: 126px;
+        margin-left: 1px !important;
+    }
+
+    .handpricestyle{
+        width: 65px;
+    }
+
+    .scanvsnewdoc{
+      position: absolute;
+      left: 42%;
+      top: 190px;
+      width: 16% !important;
+      text-align: center !important;
+    }
+}

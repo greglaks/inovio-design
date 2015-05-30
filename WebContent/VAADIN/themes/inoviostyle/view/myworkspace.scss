@@ -1,0 +1,64 @@
+@mixin myworkspace{
+		
+	.wkcomil{
+		width:100% !important;
+		height:100% !important;
+	}
+	
+	.companylogolayout{
+		width:130px;
+		height:130px;
+		position:absolute;
+		right:10px;
+	}
+	
+	.comlog{
+		position:relative;
+		display:block;
+		margin:5px auto;
+	}
+	
+	.upcolopos{
+		position:absolute;
+	    left:30px;
+	}
+	
+	.acconl{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding-left: 10px;
+		padding-bottom:20px;
+		padding-right:10px;
+		overflow: auto;
+	}
+	
+	&.v-app .vatpaywcb .v-filterselect-input,
+	&.v-app .loccuwcb .v-filterselect-input{
+	    width: 130px !important;
+	    height:20px;
+    	font-size:12px !important;
+	}
+	
+	.vatpaywcb.v-filterselect,
+	.loccuwcb.v-filterselect{
+		height:20px;
+	}
+
+	.acfol {
+		position: relative;
+		width: 100%;
+		height: 200px;
+		margin-left: 40px;
+		margin-top: 15px;
+	}
+	.lptapos{
+		width: 400px !important;
+		height: 80px !important;
+		margin-left: 2px;
+	}
+	
+
+	
+	
+}

@@ -1,0 +1,129 @@
+@mixin users{
+	.cbmidtable{
+		display:block;
+		margin:0px auto;
+	}
+	
+	.userdl{
+		position:relative;
+		height:100%;
+		width:100%;
+		padding:0px 10px 10px 10px;
+	}
+	.udpanel{
+		height:calc( 100% - 40px );
+		width:100%;
+	}
+
+    .v-panel-content-udpanel{
+      height:calc( 100% - 40px );
+      width:100%;
+    }
+
+	.udpanelcontent {
+		width: 100%;
+		padding:5px 10px 5px 10px;
+        overflow-y:scroll !important;
+        height: 100%;
+	}
+	
+	.formcaptm {
+		position: relative;
+		width: 100% !important;
+		border-top: 1px solid rgb(218, 218, 218);
+	}
+	
+	.v-caption-formcaptm .v-captiontext {
+		color: grey;
+		position: relative;
+		top: 7px;
+		background: white;
+		z-index: 10;
+		left: 10px;
+		width: auto;
+		padding-left:5px;
+		padding-right:5px;
+		text-align: center;
+	}
+	.formcaptm .v-formlayout-captioncell{
+		min-width:110px;
+		
+	}
+	.v-caption-formhalfcaptm{
+		width:0px !important;
+	}
+	.formhalfcaptm {
+		position: relative;
+		width:48% !important;
+		border-top: 1px solid rgb(218, 218, 218);
+	}
+	
+	.v-caption-formhalfcaptm .v-captiontext {
+		color: grey;
+		position: relative;
+		top: 7px;
+		background: white;
+		z-index: 10;
+		left: 10px;
+		width: auto;
+		padding-left:5px;
+		padding-right:5px;
+		text-align: center;
+	}
+	.formhalfcaptm .v-formlayout-captioncell{
+		min-width:110px;
+		
+	}
+
+	
+	.udpasfl{
+		height:90px;
+	}
+	
+	.uddatimefl{
+		height:185px;
+	}
+	
+	.udnumberfl{
+		height:60px;
+	}
+
+	.udfiwlength{
+		width:125px !important;
+	}
+	
+	.udperdetaill {
+		position: relative;
+		width: 70%;
+		height: 180px;
+		padding-top: 10px;
+		display: block;
+		overflow:auto;
+	}
+	
+	.doubleheightl{
+		position:relative;
+		height:140px;
+		width:100%;
+		padding-top:10px;
+	}
+	.dtheightl{
+		height:200px !important;
+	}
+
+    .myotheremails{
+      height: 40px !important;
+      width: 100%;
+    }
+
+    .myverifiedemails{
+      height: 40px !important;
+      width: 100%;
+    }
+
+    .companylogolayout2{
+      width: 130px;
+      height: 190px;
+      position: relative;
+    }
+}

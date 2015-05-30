@@ -1,0 +1,61 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../reindeer/reindeer.scss";
+@import "../inoviostyle/loginpage.scss";
+@import "../inoviostyle/registrationpage.scss";
+@import "../inoviostyle/mixins.scss";
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin inoviologin {
+  /* Include all the styles from the reindeer theme */
+  @include reindeer;
+  @include loginpage;
+  @include registrationpage;
+	
+	.inbody{
+		background: #1754a6 url("images/bgr.jpg") top center no-repeat;
+		min-width: 800px;
+		height:100%;
+		overflow:auto;
+	}
+	
+	#helpers {
+		text-align:right;
+		padding: 10px 10px 50px;
+	}
+	#helpers a {
+		color: #fff !important;
+		text-decoration: underline !important;
+		font-size:16px !important;
+	}
+	
+	.centeralignment{
+		text-align:center;
+	}
+	.labelwidthauto{
+		width:auto !important;
+	}
+	.fontsize18{
+		font-size:18px;
+	}
+
+    .loginlink.v-link a:visited span,
+    .loginlink.v-link a:link span
+    {
+      color: white;
+      text-decoration: none !important;
+    }
+    .loginlink.v-link a:hover span{
+      color: white;
+      text-decoration: none !important;
+      cursor:pointer;
+    }
+
+    .v-button-link .v-button-caption{
+      color: #fff !important;
+      text-decoration: underline !important;
+      font-size:16px !important;
+      font-family: "Roboto",Arial,sans-serif !important;
+    }
+}

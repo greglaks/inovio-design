@@ -1,0 +1,302 @@
+@mixin notification{
+	.ntmain{
+		position:relative;
+		padding:0px 10px 10px 10px;
+		width:100%;
+		height:100%;
+	}
+	
+	.ntpanel{
+		width:100% !important;
+		height:calc( 100% - 40px ) !important;
+		overflow-y:scroll !important;
+	}
+	
+	.ntpanelc {
+		width: 100%;
+		
+	}
+	
+	.ntbciteml {
+		width: 100%;
+		height: 350px !important;
+		position: relative;
+		border-top: 1px solid rgb(218, 218, 218) !important;
+	}
+	.v-caption-ntbciteml{
+		width:0px;
+		height:0px;
+	}	
+	 .v-caption-ntbciteml .v-captiontext {
+		color: grey;
+		position: relative;
+	    left:80px;
+	    z-index:10;
+	    background:white;
+	    padding-left:5px;
+	    padding-right:5px;
+	    font-size: 16px;
+        top:2px;
+	}
+
+	 .ntsubtf {
+		position: absolute;
+		width: 390px !important;
+	    top:45px;
+	    left:60px;
+	}
+	
+	 .v-caption-ntsubtf {
+		position:absolute;
+	    top:25px;
+	    left:60px;
+	    color:grey;
+	}
+
+    .ntreceivertf{
+      position: absolute;
+      top: 45px;
+      left: 700px;
+      width: 350px;
+    }
+
+    .v-caption-ntreceivertf {
+      position: absolute;
+      left: 700px;
+      top: 25px;
+      color:grey;
+    }
+
+	 .v-caption-nttexta {
+		position: absolute;
+	    top:75px;
+	    color:grey;
+	    left:60px;
+	}
+	
+	 .nttexta {
+		position: absolute;
+	    top:95px;
+	    left:165px;
+	    color:grey;
+	}
+
+    .ntruletexta{
+      position: absolute;
+      top: 95px;
+      left: 700px;
+      height: 120px !important;
+      width: 350px !important;
+    }
+
+    .v-caption-ntruletexta{
+      color:grey;
+      position: absolute;
+      left: 700px;
+      top: 75px;
+    }
+	
+	 .nttexta.v-richtextarea .gwt-RichTextArea {
+		height: 91px;
+	}
+	
+	 .ntprevb{
+		position: absolute;
+		top: 265px;
+		left: 700px;
+	}
+	
+	.helplabelnotif {
+		position: relative;
+		color: grey;
+		width: auto !important;
+		min-width: 130px;
+	}
+	
+	 .v-caption-helplabelnotif {
+		position: relative;
+		color: grey;
+	    width:100px !important;
+	    display:inline-block;
+	}
+	
+	.helpnotifl{
+		width: 200px;
+		max-width:286px;
+        height:170px !important;
+		padding: 5px 10px 5px 10px;
+	    min-heigth:50px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		border: 1px solid rgb(218, 218, 218);
+	}
+	
+	.nthelplnp{
+      position: absolute;
+      left: 470px;
+      top: 45px;
+      overflow: auto !important;
+	}
+
+    .notifhelpcaption{
+      color: #373737;
+    }
+
+    .v-label-notifhelpcaption{
+      color:grey;
+      width: 200px !important;
+    }
+
+    .notifhelpmaincaption{
+      color: #373737;
+      font-weight:bold;
+    }
+
+    .notifhelpcaption{
+      color:grey;
+    }
+	
+	.ntcbcopy{
+		position: absolute;
+		top: 225px;
+		left: 60px;
+	}
+
+    .ntgroup{
+      position: absolute;
+      top: 245px;
+      left: 60px;
+    }
+
+    .htgrouphour{
+      position: absolute;
+      top: 230px;
+      left: 470px;
+      width: 200px;
+    }
+
+    .v-caption-htgrouphour {
+      color: grey;
+      position: absolute;
+      top: 230px;
+      left: 380px;
+    }
+
+    .htgroupday{
+      position: absolute;
+      top: 265px;
+      left: 470px;
+      width: 200px;
+    }
+
+    .v-caption-htgroupday {
+      color: grey;
+      position: absolute;
+      left: 380px;
+      top: 265px;
+    }
+
+    .ntactive{
+      position: absolute;
+      top: 265px;
+      left: 60px;
+    }
+	
+	.previewwindow{
+		width:500px !important;
+		height:250px;
+		padding:0px 10px 0px 10px;
+	}
+	
+	.previewsubject{
+		width: 300px !important;
+		padding: 0px 0px 0px 0px !important;
+		margin-top: -5px;
+	}
+	.previewtext{
+		position: initial;
+		bottom: initial;
+		left: initial;
+		height: 120px;
+		width: 300px !important;
+		border: none !important;
+	
+	}
+	
+	.previewform .v-formlayout-captioncell{
+		vertical-align:top;
+	}
+
+    .ntstar{
+      background: url('../images/header-star-gold.png') no-repeat scroll 0% 0% transparent;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: -10px;
+      left: 60px;
+    }
+
+   .ntstarlabel{
+     position: absolute;
+     top: 0px;
+     left: 0px;
+   }
+
+    .notifcommenttextarea{
+      position: absolute;
+      bottom: 20px;
+      left: 60px;
+      height:120px !important;
+      width:390px !important;
+    }
+
+    /** Rich text area for commentar**/
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar-bottom{
+      display:none;
+    }
+
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextArea{
+      height:85px;
+    }
+
+    .notifcommenttextarea.v-richtextarea{
+      font-family: "Roboto", Arial, sans-serif;
+    }
+
+    .notifcommenttextarea.v-richtextarea{
+      @include border-radius(6px);
+      border:1px dotted grey;
+    }
+
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar{
+      background: rgb(235, 235, 235);
+    }
+
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar-top{
+      padding:3px 5px 3px 5px;
+    }
+
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar{
+      border-bottom:1px dotted grey;
+    }
+
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton,
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton{
+      margin-left:2px;
+      @include border-radius(3px);
+      background:transparent;
+    }
+
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton:hover,
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton:hover{
+      background:url(../images/background-stripe.png) 0px 0px repeat-x;
+    }
+
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down,
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down,
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering,
+    .notifcommenttextarea.v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering{
+      background:rgb(38, 126, 187);
+    }
+}

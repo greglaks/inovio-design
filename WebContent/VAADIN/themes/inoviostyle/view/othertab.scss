@@ -1,0 +1,67 @@
+@mixin othertab{
+
+  .pipanel2{
+    position:absolute;
+    top:150px;
+    left:0px;
+    height:calc(100% - 150px) !important;
+  }
+
+  .pipanel2 .v-panel-caption{
+    color: grey;
+    position:relative;
+    left:10px;
+  }
+
+  .v-datefield-faktur{
+    background-image:none;
+    border:none;
+    border:1px dotted transparent;
+    width:100% !important;
+  }
+
+  .symbollayout170{
+    position: relative;
+    width: 170px !important;
+    height: 100px;
+    margin-left:5px;
+  }
+
+  .symbollayout195{
+    position: relative;
+    width: 195px !important;
+    height: 100px;
+    margin-left:5px;
+  }
+
+  .v-caption-symbollayout170 .v-captiontext {
+    color:rgb(218, 218, 218);
+    font-size:14px;
+  }
+
+  .v-caption-symbollayout195 .v-captiontext {
+    color:rgb(218, 218, 218);
+    font-size:14px;
+  }
+
+  .pibindel2{
+    background-image: url(../images/kos16x16-cervena.png);
+    background-repeat:no-repeat;
+    height: 16px;
+    width: 16px;
+    background-size: 100% auto;
+    top: -3px;
+    left: 0px;
+    position: relative;
+  }
+
+  .pitedic{
+    position: absolute;
+    font-size: 12px !important;
+    width: 200px !important;
+    height: 20px;
+    top:40px;
+    left:290px;
+  }
+}
+

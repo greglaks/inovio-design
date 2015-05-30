@@ -1,0 +1,63 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+//$v-font-family: "Open Sans", sans-serif;
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+//$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(210, 0%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+//$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+$font-color:#626262;
+$grey-light:#E0E0E0;
+$light-blue:#197de1;
+
+@import "../reindeer/reindeer.scss";
+@import "invoicetest.scss";
+@import "table.scss";
+@import "mixins.scss";
+@mixin comp {
+  @include reindeer;
+  @include table;
+  @include invoice;
+  
+  &.v-app, .FlatUI .v-window,  .v-popupview-popup, .v-tooltip, 
+  &.v-app input, &.v-app select, &.v-app button, 
+  &.v-app textarea,  .v-window input,  .v-window select, 
+   .v-window button,  .v-window textarea,  .v-popupview-popup input, 
+   .v-popupview-popup select,  .v-popupview-popup button, .v-caption,
+   .v-popupview-popup textarea,  .v-filterselect-suggestpopup, 
+   .v-datefield-popup,  .v-contextmenu,  .v-Notification, 
+   .v-menubar-submenu,  .v-drag-element,  .v-table-header-drag, v-caption, .v-label,
+   .v-app input{
+  		font:300 12px "Open Sans", sans-serif;
+  		color:$font-color;
+  }
+    
+.validation-error{
+	border:#F72636 !important;
+	box-shadow:0 0 0 2px rgba(253, 55, 55, 0.58), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+.white{
+	background:white;
+}
+}

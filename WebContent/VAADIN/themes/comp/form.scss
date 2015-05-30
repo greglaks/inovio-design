@@ -1,0 +1,23 @@
+@mixin form{
+
+	.text-in-form.v-textfield{
+		border:1px dashed $grey-light;
+	}
+	.text-in-form.v-textfield:focus{
+		border-color:$light-blue;
+		box-shadow:none;
+	}
+	.text-in-form.v-filterselect{
+		border:1px dashed $grey-light !important
+	}
+	.text-in-form.v-filterselect{
+		border: 1px dashed $grey-light !important;
+	}
+	.text-in-form.v-filterselect-focus{
+		border: 1px dashed $light-blue !important;
+		box-shadow:none !important;
+	}
+	.text-in-form .v-filterselect-button{
+		border:none !important;
+	}
+}

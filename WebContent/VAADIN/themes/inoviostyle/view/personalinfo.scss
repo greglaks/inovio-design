@@ -1,0 +1,707 @@
+@mixin personalinfo{
+	.pimain{
+		position:relative;
+	}
+	.utphoto{
+		margin-bottom:2px;
+	}
+
+	.acccb{
+		position: absolute;
+		left: 290px;
+		top: 70px;
+	}
+
+	.udetailp{
+		position: relative;
+		width: 99%;
+		height:120px;
+		padding-left: 15px;
+	}
+	
+	.piacb{
+		margin-left: 20px !important;
+	}
+	
+
+	.pitextmt{
+		position: absolute;
+		width: 305px;
+	    top:50px;
+	    left:95px;
+	}
+
+	/* User detail on WP4 */
+	&.v-app .pianrede .v-filterselect-input {
+		width: 70px !important;
+		height: 30px;
+		font-size: 20px !important;
+	}
+	.pianrede {
+		position: absolute;
+		left: 35px;
+		padding-right: initial;
+	}
+	.pifirstname {
+		width: 150px !important;
+		position: absolute;
+		height: 30px !important;
+		font-size: 20px !important;
+		margin-top: initial !important;
+		left: 125px;
+	}
+	.pilastname {
+		width: 150px;
+		position: absolute;
+		height: 30px !important;
+		font-size: 20px !important;
+		left: 285px;
+		margin-top: initial !important;
+	}
+	.pijbtitle {
+		position: absolute;
+		width: 310px;
+		top: 50px;
+		left: 125px;
+	}
+
+	.piemail {
+		position: absolute;
+		width: 310px;
+		left: 125px;
+		top: 93px;
+		font-size: 12px !important;
+		margin-top: initial !important;
+	}
+
+	.pitelp {
+		position: absolute;
+		width: 310px;
+		top: 135px;
+		left: 125px;
+	}
+
+	/* End of User detail on WP4 */
+
+	.piemtext{
+		position: absolute;
+		width: 260px;
+	    top:50px;
+	    left:410px;
+	}
+	.pitltext{
+		position: absolute;
+		width: 260px;
+	    left:410px;
+	    height: 30px !important;
+		font-size: 20px !important;
+		margin-top:initial !important;
+	}
+	.ilcontainer{
+		position:relative;
+		height:auto;
+		width:100%;
+		padding-top:10px;
+	}
+	
+	.pibindelposb{
+		position:absolute;
+		top:50px;
+		left:40px;
+	}
+
+    .pibindel2{
+      background-image: url(../images/kos16x16-cervena.png);
+      background-repeat:no-repeat;
+      height: 16px;
+      width: 16px;
+      background-size: 100% auto;
+      top: -3px;
+      left: 0px;
+      position: relative;
+    }
+	
+	.pibindel{
+		background-image: url(../images/kos16x16-cervena.png);
+	    background-repeat:no-repeat;
+	    display:none;
+        height: 16px;
+        width: 16px;
+        background-size: 100% auto;
+        top: 5px;
+        left: 0px;
+        position: relative;
+	}
+	
+	.pibindel:hover{
+		cursor:pointer;
+	}
+	
+	.pinsinginfl:hover .pibindel {
+		display: block;
+	}
+	
+	.pinsinginfl{
+		position: relative;
+		width: 97%;
+		height: 120px;
+		padding-top:10px;
+		border-bottom:1px solid rgb(218, 218, 218);
+		display:block;
+		margin-left:10px;
+	}
+
+    .pinsinginfl2{
+      position: relative;
+      width: 97%;
+      height: 60px;
+      padding-top:10px;
+      //border-bottom:1px solid rgb(218, 218, 218);
+      display:block;
+      margin-left:10px;
+    }
+	
+	.pipanel{
+	   position:absolute;
+       top:40px;
+       left:0px;
+       height:calc(100% - 40px) !important;
+	}
+
+    .pilabel{
+        position:absolute;
+        top:150px;
+        left:10px;
+    }
+
+    .pipanel4{
+      position:absolute;
+      top:170px;
+      left:10px;
+      height:80px !important;
+    }
+
+    .pipanel3Text{
+      position:absolute;
+      top:280px;
+      left:10px;
+    }
+
+    .pipanel3{
+      position:absolute;
+      top:280px;
+      left:0px;
+      height:calc(100% - 280px) !important;
+    }
+	
+	.pipanel .v-panel-caption{
+		color: grey;
+	    position:relative;
+	    left:10px;
+	}
+	
+	.pdinfocoml{
+		position: relative;
+		width: 100%;
+		min-height: 300px;
+		height: auto;
+		background: transparent;
+		float: left;
+		padding-top: 10px;
+		padding-bottom: 20px;
+		padding-left: 10px;
+	}
+	
+	.v-caption-pdinfocoml .v-captiontext {
+		color: grey;
+	    position:relative;
+	    left:10px;
+	    width:120px;
+	    text-align:center;
+	    background:white;
+	    z-index:1;
+	    top:-20px;
+	}
+	
+	.pipersonde{
+
+		left: 5px;
+		height: 70px !important;
+		width: 97% !important;
+		position: relative;
+
+	}
+	
+	.piscomlayout{
+		border-top: 1px solid rgb(218, 218, 218);
+		width: 97.5%;
+		height: auto;
+		padding-left: 10px;
+		padding-right: 23px;
+		padding-top:10px;
+		padding-bottom:10px;
+	    position:relative;
+	}
+	
+	.v-caption-piscomlayout .v-captiontext {
+		color: grey;
+	    top:-13px;
+	    background:white;
+	    left:10px;
+	    padding-left:5px;
+   		padding-right:5px;
+	    text-align:center;
+	    position:relative;
+	    z-index:5;
+	}
+	
+	.v-caption-piscomlayout{
+		height:0px;
+	}
+
+/*	
+	&.v-app .pipocombo .v-filterselect-input
+	{
+		width: 100px !important;
+        height:20px;
+        font-size:10px !important;
+	}
+	
+	.pipocombo .v-filterselect-button{
+		display:none;
+	}
+*/
+	
+	.pibinbutton{
+		background-size:100% !important;
+		background-position-y:5px;
+	}
+		
+	.pitetext{
+		width: 140px;
+		margin-right:10px;
+	    height: 20px !important;
+	}
+	
+	.picombol{
+		position:relative;
+		margin-top:10px;
+		float:left;
+		margin-left:10px;
+	}
+
+	.pitextl{
+		height: 80px !important;
+	    width:150px !important;
+	}
+	
+	.picilogol{
+		width:100% !important;
+		height:140px;
+		padding-left:10px;
+		padding-bottom:5px;
+		position:relative;
+	}
+	
+	.piciclembed{
+		position:relative;
+		
+	}
+	
+	&.v-app .picomcom .v-filterselect-input{
+	    height:30px !important;
+	    font-size:20px !important;
+	}
+	
+	.picomcompos{
+		position: absolute;
+		width: 58% !important;
+	}
+	
+	.cblb.v-checkbox label{
+		color:grey;
+	}
+		
+	&.v-app .baspcom .v-filterselect-input
+	{
+		width:50px !important;
+		height:30px;
+	}
+	.v-caption-baspcom.v-disabled {
+		opacity: 1;
+		filter: alpha(opacity=30);
+		cursor: default;
+		color:grey;
+	}
+	.v-caption-baspcom .v-captiontext{
+		position: absolute;
+		left: 61%;
+		top: 7px;
+	}
+	
+	.v-caption-baspcom{
+		width:0px;
+		height:0px;
+	}
+	
+	.baspcom{
+		position:absolute;
+		left:75%;
+	}
+
+	.piicaresb{
+		position: absolute;
+	    top:43px;
+	    left:215px;
+	}
+	
+	.pimainccapl{
+		color: grey;
+		position: absolute;
+	    top:0px;
+	    right:325px;
+		width: 140px !important;
+		background: white;
+	    text-align:center;
+	}
+	
+	.pimainpcapl{
+		color: grey;
+		position: absolute;
+	    top:0px;
+	    left:10px;
+		width: 140px !important;
+		background: white;
+	    text-align:center;
+	}
+	
+	.piiccompcombo{
+		position: relative;
+		top: 40px;
+		width:190px;
+	}
+	
+	&.v-app .piiccompcombo .v-filterselect-input
+	{
+		font-size:12px !important;
+		width: 190px !important;
+        height:25px;
+	}
+	
+	.piiccompcombo .v-filterselect-button{
+		display:none;
+	}
+
+	 .pisnnfotext {
+		width: 200px;
+		position: absolute;
+		height: 30px !important;
+		font-size: 20px !important;
+	    left:200px;
+	    margin-top:initial !important;
+	}
+
+    .pisnnfotext2 {
+      width: 150px;
+      position: absolute;
+      left:250px;
+      margin-top:initial !important;
+    }
+
+    .pibutton{
+      width: 120px;
+      position: absolute;
+      height: 30px !important;
+      font-size: 20px !important;
+      left:450px;
+      margin-top:initial !important;
+    }
+
+    .pibutton2{
+      width: 120px;
+      position: absolute;
+      left:450px;
+      margin-top:initial !important;
+    }
+	
+	 .pinfotext {
+		width: 96px !important;
+		position: absolute;
+		height: 30px !important;
+		font-size: 20px !important;
+		margin-top:initial !important;
+	    left:95px;
+	}
+
+    .pinfotext2 {
+      width: 96px !important;
+      position: absolute;
+      margin-top:initial !important;
+      left:90px;
+    }
+	
+	 .pipertcb {
+		position: absolute;
+		left:20px;
+		padding-right:initial;
+	}
+	
+	&.v-app .pipertcb .v-filterselect-input {
+		width: 70px !important;
+		height: 30px;
+		font-size: 20px !important;
+	}
+	
+	.pipertcb .v-filterselect-button{
+		display:none;
+	}
+
+	
+	.picomupload{
+		position: relative;
+	    display:block;
+	    margin-left:5px;
+	    margin-top:10px;
+	    width:80px !important;
+	}
+	
+	.piiclayout{
+		width: 275px;
+		float: right;
+		height: 80px;
+		position: absolute;
+		bottom:10px;
+	    right:0px;
+	}
+	
+	.picompanyab{
+		color:rgb(38, 126, 187);
+		background:transparent;
+		border:none;
+	}
+	
+	.picompanyab:hover{
+		cursor:pointer;
+		text-decoration:underline;
+	}
+	
+	
+	 .piaddt {
+		position: absolute;
+		width: 250px;
+		margin-right: 30px;
+	}
+
+	 .piaddnrt {
+		position: absolute;
+		width: 60px;
+		left: 200px;
+		top: 10px;
+	}
+	
+	 .picityt {
+		position: absolute;
+		width: 160px;
+		top: 50px;
+		left: 10px;
+	}
+	
+	 .pizipt {
+		position: absolute;
+		width: 60px;
+		top: 50px;
+		left: 200px;
+	}
+
+    .pitedic{
+      position: absolute;
+      font-size: 12px !important;
+      width: 200px !important;
+      height: 20px;
+      top:40px;
+      left:290px;
+    }
+
+	.piwwwt{
+		position: absolute;
+	    width:200px;
+	    top:96px;
+	    left:290px;
+	}
+	
+	&.v-app .pidiccompbo .v-filterselect-input
+	{
+		width: 190px !important;
+        height:20px;
+        font-size:12px !important;
+	}
+	
+	.pidiccompbo .v-filterselect-button{
+		display:none;
+	}
+	.pidiccompbo{
+		position: absolute;
+		width: 190px;
+		display: block;
+		top: 70px;
+		height:21px !important;
+		left:11px;
+	}
+	
+	&.v-app .pilandt .v-filterselect-input{
+		height:21px !important;
+		width:249px !important;
+		font-size:12px !important;
+	}
+	.pilandt {
+		position: absolute;
+      display: block;
+      top: 70px;
+      width: 140px;
+      margin-right:10px;
+      height: 20px !important;
+    }
+
+	.pilandt {
+		position: relative;
+		width: 250px;
+		display: block;
+		top: 90px;
+		padding-left: initial;
+	}
+	
+	.piaccbox{
+		position:absolute;
+	    left:85%;
+	    top:10px;
+	}
+
+	.piaddlt{
+		position: relative;
+		width: 250px;
+		display: block;
+	    top:10px;
+	}
+	
+	.psitable{
+		display:block;
+		margin-bottom:5px;
+	}
+	
+	.ugb{
+		position: absolute;
+		bottom: 20px;
+		left:500px;
+	}
+	
+	.pitint{
+		position: absolute;
+	    width:270px !important;
+	    top:96px;
+	    left:11px;
+	}
+	
+	.picomdesc{
+		position: relative;
+		width: 100% !important;
+		height: 75px !important;
+		overflow-y:auto;
+	}
+	
+	.picomexdesclayout{
+		height: 90px !important;
+		padding-left:10px;
+    	padding-right:30px;
+	}
+	
+	.pitcollay{
+		display:inline !important;
+		width:50% !important;
+	}
+	
+	.piaddcoml{
+		position:relative;
+		width:100%;
+		padding-top:10px;
+	}
+	
+	.piaddcont{
+		padding-left: 10px !important;
+		padding-right:0px !important;
+		border-top: 1px solid rgb(218, 218, 218);
+		width: 48% !important;
+		height: 130px !important;
+		padding-top:10px;
+	    position:relative;
+	    margin-right:10px;
+	}
+	
+	.v-caption-piaddcont{
+		width:0px;
+		height:0px;
+		display:inline-block;
+	}
+	
+	.v-caption-piaddcont .v-captiontext {
+		color: grey;
+	    top:-135px;
+	    background:white;
+	    left:10px;
+	    padding-left:5px;
+   		padding-right:5px;
+	    text-align:center;
+	    position:relative;
+	    z-index:5;
+	}
+	
+	.pitabsecl{
+		padding-left: 10px !important;
+		padding-right:0px !important;
+		border-top: 1px solid rgb(218, 218, 218);
+		width: 48%;
+		height: auto;
+		padding-top:25px;
+		padding-bottom:10px;
+	    position:relative;
+	    margin-right:10px;
+	}
+	
+	.v-caption-pitabsecl{
+		width:0px;
+		height:0px;
+		display:inline-block;
+	}
+	
+	.v-caption-pitabsecl .v-captiontext {
+		color: grey;
+	    top:-62px;
+	    background:white;
+	    left:10px;
+	    padding-left:5px;
+   		padding-right:5px;
+	    text-align:center;
+	    position:relative;
+	    z-index:5;
+	}
+
+	.picommatel{
+		position:relative;
+		padding-top:10px;
+		width:100%;
+		height:120px;
+		margin-top:5px;
+	}
+	
+	.piprbt{
+		position:absolute;
+		left:90px;
+		top:85px;
+	}
+
+    .picomsystememail{
+      position: relative;
+      left: 10px;
+      width: 280px;
+    }
+
+}

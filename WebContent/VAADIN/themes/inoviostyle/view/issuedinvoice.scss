@@ -1,0 +1,261 @@
+@mixin issuedinvoice{
+	.iisroot{
+		position:relative;
+		width:100%;
+		height:calc( 100% - 50px );
+		overflow-y:scroll !important;
+	}
+	.iisrootcontainer{
+		position:relative;
+		width:100%;
+		height:auto;
+		overflow-y:scroll;
+	}
+	.issuedinvoicecontainer{
+		width:100%;
+		height:auto;
+		padding:0px 10px 10px 10px;
+		position:relative;
+	}
+	
+	.iinvitemschemal{
+		width: 100%;
+		height: 90px;
+		padding-left: 10px;
+		padding-right: 10px;
+		display: block;
+		position: relative;
+		border-bottom: 1px solid rgb(218, 218, 218);
+	}
+
+	.nschemapanel{
+		width:100%;
+		height:auto !important;
+		margin-top:10px;
+		@include border-radius(3px);
+		position:relative;
+	}
+	 .v-caption-iicontainerl{
+	    height:0px;
+	    width:0px;
+	}
+	 .v-caption-iicontainerl .v-captiontext {
+		position: relative;
+		color: grey;
+	    top:0px;
+	    left:10px;
+	    z-index:10;
+	    background:white;
+	    padding-left:5px;
+	    padding-right:5px;
+	}
+	.iicontainerl {
+		width: 800px !important;
+		height: auto;
+		padding-bottom: 10px;
+		margin-top: 10px;
+		border-top: 1px solid rgb(218, 218, 218);
+	    
+	    position:relative;
+	}
+	.nspancon{
+		width: 100%;
+		min-height: 80px;
+		height: auto;
+		padding-bottom:40px;
+	}
+	
+	 .v-caption-iidoctypecom {
+		width: 100px;
+		position: absolute;
+		top:10px;
+	    left:60px;
+	    color:grey;
+	}
+	
+	 .iidoctypecom {
+		position: absolute;
+		top:10px !important;
+	    left:155px;
+		width: 200px !important;
+	}
+	
+	 .v-caption-iistartoncom {
+		width: 100px;
+		position: absolute;
+		top:50px;
+	    left:60px;
+	    color:grey;
+	}
+	
+	 .iistartoncom {
+		position:absolute;
+		top:50px;
+	    left:165px;
+		width: 200px !important;
+	}
+	
+	 .v-caption-iiinvoicefcom {
+		width: 100px;
+		position: absolute;
+		left:430px;
+	    top:10px;
+	    color:grey;
+	}
+	
+	 .iiinvoicefcom {
+		position:absolute;
+		left:535px;
+	    top:10px;
+	    width:200px;
+	}
+	
+	.iiprevexlabel{
+		position:absolute;
+		left:535px;
+	    top:40px;
+	    width:200px;
+	    color:grey;
+	}
+	
+	.iiprevb{
+		position: absolute;
+		right: 75px;
+		top: 65px;
+	}
+	
+	.iinvitemschemal:hover .iiitemdelbutton {
+		display: block;
+	}
+
+	.iiitemdelbutton {
+		background-image: url(../images/kos16x16-cervena.png);
+	    background-repeat:no-repeat;
+	    height:20px;
+	    width:20px;
+	    display:none;
+	    background-size:94%;
+	    position:absolute;
+	    top:10px;
+	    left:5px;
+	}
+	
+	
+	.iiitemdelbutton:hover{
+		cursor:pointer;
+	}
+	
+	.iiaddbutton {
+		position:absolute;
+		bottom:5px;
+		left:10px;
+	}
+	
+	.iindescl{
+		position:relative;
+		width:100%;
+		height:300px;
+	}
+	
+	 .iideft {
+		position: absolute;
+		width: 200px !important;
+	    top:20px !important;
+	    left:165px;
+	}
+	
+	 .v-caption-iideft {
+		position: absolute;
+	    top:20px;
+	    left:0px;
+	    color:grey;
+	}
+	
+	 .iidueint {
+		width: 200px !important;
+		position: absolute;
+	    top:60px;
+	    left:165px;
+	}
+	
+	 .v-caption-iidueint {
+		position: absolute;
+	    top:60px;
+	    left:0px;
+	    color:grey;
+	}
+	
+	 .iitextinv {
+		position: absolute;
+		width: 300px;
+	    top:100px;
+	    height:120px;
+	    left:165px;
+	}
+	
+	.iitextinv.v-richtextarea .gwt-RichTextArea{
+		height:91px !important;
+	}
+	
+	 .v-caption-iitextinv {
+		position: absolute;
+	    color:grey;
+	    top:130px;
+	}
+	
+	 .iiprinvdescb {
+		position: absolute;
+		top: 200px;
+		left: 685px;
+	}
+	
+	.helpl{
+		width: 120px;
+		height: 110px;
+		padding:1px 5px 5px 5px;
+		@include border-radius(3px);
+		border: 1px solid rgb(218, 218, 218);
+	}
+	
+	.iihelpl{
+		position: absolute;
+		left: 840px;
+		top: 10px;
+	}
+	
+	 .v-caption-iihelpl{
+	    height:0px;
+	    width:0px;
+	}
+	
+	 .helplabel {
+		position: relative;
+		color: grey;
+		width: 55px!important;
+	}
+	
+	 .v-caption-helplabel {
+		position: relative;
+		color: grey;
+	    width:50px !important;
+	    display:inline-block;
+	}
+
+	.rinvappincb{
+		position: absolute;
+		bottom: 20px;
+		left: 170px;
+	}
+	
+	.rihelpl{
+		position:absolute;
+		top:50px !important;
+		left:895px;
+	}
+	
+	.helpmaincaption{
+		color:grey;
+		font-weight:bold;
+	}
+
+}	

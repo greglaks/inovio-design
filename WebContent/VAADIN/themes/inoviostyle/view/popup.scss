@@ -1,0 +1,218 @@
+@mixin popup{
+	.pumainl{
+		width: 700px;
+		height: 530px;
+		padding-left:15px;
+	    padding-right:15px;
+	    padding-top:15px;
+	}
+
+    .pumain2{
+      width: 500px;
+      height: 500px;
+      padding-left:15px;
+      padding-right:15px;
+      padding-top:15px;
+    }
+	
+	.pulcont{
+		width: 290px;
+		height: 65px;
+		padding-left: 5px;
+		padding-top: 5px;
+		border: 1px solid grey;
+		@include border-radius(3px);
+		overflow: scroll;
+		float: right;
+		
+	}
+	
+	 .v-caption-pulcont .v-captiontext {
+		margin-top: 25px;
+	}
+	
+	 .v-caption-pulcont {
+		height: 20px;
+		width: 10px;
+	}
+	
+	.pulplcont{
+		float: left !important;
+		margin-left:60px !important;
+		margin-top:46px;
+	}
+	
+  .v-caption-pulplcont .v-captiontext {
+		margin-top: 65px;
+		margin-left:20px;
+		color:grey;
+	}
+	
+	 .v-caption-pulplcont {
+		height: 0px;
+		width: 0px;
+	}
+	
+	
+
+	.puupb {
+		position: relative !important;
+		margin-bottom: 20px !important;
+		margin-left: 75px !important;
+		top: 10px;
+		display: block;
+		float:right;
+	}
+	
+	.uplbut{
+		height: 50px;
+		width: 200px;
+		bottom: 5px;
+		right: 0px;
+		position: relative;
+	    float:right;
+	    margin-top:20px;
+	    display:block;
+	}
+	
+	 .upstorb {
+		position: absolute;
+		top:15px;
+	    left:50px;
+	}
+	
+	 .upseb {
+		position: absolute;
+		top: 15px;
+		right: -30px;
+	}
+
+    .pureccontcheckboxes{
+        width: 93%;
+        height: 60px;
+        overflow-y: scroll;
+        @include border-radius(3px);
+        border:1px solid grey;
+        padding-left:5px;
+        padding-right:5px;
+    }
+
+    .pureccontcheckboxesleft{
+        width: 250px;
+        height: 100%;
+        position: relative;
+    }
+
+    .pureccontcheckboxesright{
+        width: 250px;
+        height: 100%;
+        position: relative;
+    }
+
+    .pureccontcheckbox{
+        position: relative;
+        height: 20px;
+        width: 200px;
+        margin-left: 5px;
+        margin-top: 2px;
+    }
+	
+	.pureccont{
+		width: 93%;
+		height: 60px;
+		overflow-y: scroll;
+	    @include border-radius(3px);
+	    border:1px solid grey;
+	    padding-left:5px;
+	    padding-right:5px;
+	}
+
+    .pureccont2{
+      width: 80%;
+      height: 90px;
+      overflow-y: scroll;
+      @include border-radius(3px);
+      border:1px solid grey;
+      padding-left:5px;
+      padding-right:5px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+	
+	.v-caption-puemtextbod .v-captiontext{
+		position: relative;
+		width: 50px !important;
+		top:40px;
+	    text-align:right;
+	    color:grey;
+	}
+	.v-caption-puemtextbod{
+		height:0px;
+		width:0px;
+	}
+	.puemtextbod{
+		height: 150px !important;
+		width: 81% !important;
+		position: initial;
+	    margin-left:85px;
+	}
+    .v-caption-puemtextbod2 .v-captiontext{
+      position: relative;
+      width: 50px !important;
+      top:40px;
+      text-align:right;
+      color:grey;
+    }
+    .v-caption-puemtextbod2{
+      height:0px;
+      width:0px;
+    }
+    .puemtextbod2{
+      height: 150px !important;
+      width: 85% !important;
+      position: initial;
+      margin-left:60px;
+    }
+	
+	.pubconitem{
+		position:relative;
+		margin-left:5px;
+		margin-right:5px;
+		float:left;
+	}
+	
+	.puebu{
+		position: relative;
+		margin-left: 1px;
+		margin-right: 1px;
+		float: initial !important;
+	    top:5px;
+	}
+	
+	.puet{
+		width: 150px !important;
+	    margin-top:12px !important;
+	    margin-right:5px;
+	}
+
+    .pust{
+      width: 93% !important;
+      margin-top:12px !important;
+      margin-right:5px;
+    }
+	
+	 .putbd:after {
+		content: " \2716";   
+		color:rgb(255, 107, 107);
+	}
+	
+	.putbd{
+		float:left ;
+		margin-right:5px !important;
+	}
+	
+	.cbappos{
+		position:relative;
+		display:block;
+	}
+}

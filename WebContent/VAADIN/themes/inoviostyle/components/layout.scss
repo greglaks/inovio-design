@@ -1,0 +1,1398 @@
+@mixin layout{
+	.v-gridlayout-spacing-on{
+		padding-left:8px;
+		padding-top:5px;
+	}
+	
+	.v-horizontal > .v-expand > .v-spacing{
+		width:5px !important;
+	}
+	.v-vertical > .v-spacing{
+		height:6px !important;
+	}
+	.faktura-section-layout{
+		border-bottom:1px solid $grey-light;
+		margin: 5px;
+		padding-bottom: 5px;
+		padding-right:10px;		
+	}
+	
+	.root{
+		height:100%;
+		width:100%;
+	}
+	
+	.phad{
+		height: calc(100% - 220px) !important;
+		width: 100%;
+		position: absolute;
+		bottom: 10px;
+		left: 0px;
+		overflow-y: scroll !important;
+	}
+	
+	.phac .v-panel-content{
+		position:initial !important;
+	}
+	
+	.phac{
+		height: calc(100% - 50px) !important;
+		width: 100% !important;
+		position: absolute;
+		bottom: 10px;
+		left: 0px;
+	}
+
+    .phacsmall{
+        height: calc(100% - 220px) !important;
+        width: 100% !important;
+        position: absolute;
+        bottom: 10px;
+        left: 0px;
+    }
+	
+	.pfml{
+		position: absolute;
+		bottom: 10px;
+		left: 0px;
+		height: calc(100% - 50px) !important;
+		overflow-y: scroll !important;
+	}
+
+	.mainbackground{
+		background:url(../images/background.jpg);
+		background-repeat:no-repeat;
+		background-size:cover;
+		width:100%;
+		height:100%;
+		min-height:620px;
+		min-width:1280px;
+		position:relative;
+	}
+	
+	.mainlayout{
+        /*position: relative; */
+        position: absolute;
+		min-width:1280px;
+		min-height:635px;
+		margin: 60px auto;
+		display: block !important;
+		background: rgba(245, 245, 247, 0.3);
+	}
+
+	.hidelayout{
+		display:none;
+	}
+	.layoutcenter{
+		display:block;
+		float:initial !important;
+		margin:auto !important;
+	}
+	.whitelayout{
+		position: relative;
+		display: inline-block;
+		background: white;
+		margin-top: 10px;
+		margin-left: 3px;
+		width: 100%;
+		height: 98%;
+	}
+	
+	div.v-csslayout{
+		display:inline-block !important;
+	}
+	
+	.filtertablelayout{
+		width:100%;
+		height:100%;
+		padding-top:10px;
+    	padding-left:10px;
+	}
+	
+	.tablecomponentlayout{
+		position: relative;
+		width: 115px;
+		height: 23px;
+		display:inline-block;
+	}
+	
+	/** Faktur layout **/
+	
+	.fakturlayout{
+		width: 98%;
+		min-height: 94%;
+		height: auto;
+		border: 2px solid #267EBB;
+		position: relative;
+		display: block;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: 10px;
+		margin-bottom: 10px;
+	    overflow: hidden;
+		display: block !important;
+	    @include border-radius(8px);
+	}	
+	
+	.fakturtoplayout{
+		width: 100%;
+		height: 110px;
+		border-bottom: 1px solid rgb(218, 218, 218);
+		position:relative;
+		margin-top:5px;
+	}
+	.cleintaddresslayout{
+		width:180px;
+		height:100%;
+		float:left;
+	}
+	.buttombuttonlayout{
+		padding-top:10px;
+		width:100px;
+		height:20px;
+		background:rgb(218, 218, 218);
+	}
+	
+
+	 .fakturrecipeintlayout {
+		position: relative;
+		border-top: 1px solid rgb(218, 218, 218);
+		border-bottom: 1px solid rgb(218, 218, 218);
+		margin-top: 20px;
+		height: 115px;
+		padding-top: 5px;
+	}
+		
+	 .v-caption-fakturrecipeintlayout .v-captiontext {
+		position: relative;
+		font-size: 12px;
+		color: grey;
+		float: right;
+		font-weight: bold;
+		float: left;
+		top: 15px;
+	}
+	
+	.layoutauto{
+		width:300px;
+		height:auto;
+		border:1px solid white;
+	}	
+	
+	.fakturbankcontentlayout{
+		position: relative;
+		min-height: 80px;
+		height: auto;
+		overflow: visible;
+		margin-top: 95px;
+		margin-bottom: 15px;
+		width:450px;
+		float: left;
+	}
+	
+	.topnavigationlayout{
+		position:absolute;
+		top:0px;
+		left:0px;
+		height:57px;
+		width:100%;
+		background:url(../images/header-bg-stripe.png);
+		background-repeat:repeat-x;
+		border-bottom: 2px solid rgba(255, 255, 255, 0.94);
+	 	margin:0 auto;
+	}
+	
+	
+	 .banksymbollayout {
+		border-top: 1px solid rgb(218, 218, 218);
+		position: relative;
+		top: 10px;
+		width: 100%;
+		overflow: visible;
+		height: 115px;
+		display: inline-block;
+	}
+	
+	.bankform{
+		position: relative;
+		width: 210px !important;
+		height: 100px;
+		left: 15px;
+	}
+	
+	.bankform .v-formlayout-captioncell .v-caption{
+		font-size:12px;
+		color:grey;
+	}
+	
+	.stlayout .v-formlayout-captioncell .v-caption{
+		color:grey;
+	}
+
+	.symbollayout{
+		position: relative;
+		width: 125px !important;
+		height: 100px;
+	}
+	
+	 .v-caption-symbollayout .v-captiontext {
+	    color:rgb(218, 218, 218);
+	    font-size:14px;
+	}
+
+	/*.datumlayout.v-formlayout.v-has-width > table{
+		border-spacing:0px 2px;
+	}*/
+
+    .symbollayout195{
+      position: relative;
+      width: 195px !important;
+      height: 100px;
+      margin-left:5px;
+    }
+
+    .v-caption-symbollayout170 .v-captiontext {
+      color:rgb(218, 218, 218);
+      font-size:14px;
+    }
+
+    .v-caption-symbollayout195 .v-captiontext {
+      color:rgb(218, 218, 218);
+      font-size:14px;
+    }
+	
+	.datumlayout{
+		position: relative;
+		width:160px !important;
+		height: 100px;
+		left:10px;
+	}
+	
+	.labellayout{
+		position: relative;
+		width:90px;
+		height: 100px;
+	}
+	
+	.fakturitemlayout{
+		position: relative;
+		width: 100%;
+		height: auto;
+		min-height: 25px;
+		border-bottom: 1px solid rgb(218, 218, 218);
+		border-top: 1px solid rgb(218, 218, 218);
+		padding-top:20px;
+		display: block;
+	}
+	
+	
+	.fakturfooter{
+		position: relative;
+		bottom: 0px;
+		height: 230px;
+		margin-bottom: 20px;
+		width: 100%;
+		float: right;
+	}
+	
+	.fakturatopbuttonlayout{
+		width: 100% !important;
+		height: 40px;
+		display:inline-block;
+		border-bottom: 1px solid rgb(218, 218, 218);
+	}
+	
+	.fakturtotallayout{
+		float: right;
+	    margin-right:10px;
+	    top:10px;
+	    position:relative;
+	    display:inline;
+	    width: 280px;
+	}
+	
+	.barcode{
+		float: left;
+	    top:50px;
+	    position:relative;
+	}
+	
+	 .commentarlayout {
+		position: relative;
+		width: 100%;
+		height: auto;
+		min-height: 94%;
+		display: block;
+	}
+	
+	.commentarcontainer{
+		position:relative;
+		display:block;
+		width:100%;
+		height:auto;
+		min-height:94%;
+		margin-top:5px;
+		border-bottom: 1px solid rgb(218, 218, 218);
+	}
+	
+	 .commentar {
+		height: 150px;
+		width: 97%;
+		overflow: hidden;
+		position: relative;
+		margin-top: 10px;
+		border-bottom: 1px solid rgb(218, 218, 218);
+		margin-left: 10px;
+	}
+
+	
+	.buttonnavigationlayout{
+		position:relative;
+		height:100%;
+		width:680px;
+		padding-left:10px;
+   		padding-right:10px;
+	}
+
+    .firstviewbuttonnavigationlayout{
+        position:absolute;
+        height:100%;
+        width:70%;
+        padding-left:10px;
+        padding-right:10px;
+        left:15%;
+    }
+	
+	 .creditlayout {
+		position: relative;
+		height: 100%;
+		width: 240px;
+		right:5px;
+		float:right;
+	}
+
+    .creditlayoutwindow{
+        width: 350px;
+        height: 270px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 15px;
+     }
+
+    .creditlayoutwindowinfo{
+      position: absolute;
+      height: 50px;
+      width: 200px;
+      left:5px;
+      top: 5px;
+      float:left;
+    }
+
+    .creditlayoutwindowinfolabelpremium{
+      color: #FFD700;
+      font-size: 12px;
+      font-weight: bold;
+      width: 170px !important;
+      top: 0px;
+      position: absolute;
+      text-align: left;
+    }
+
+    .creditlayoutwindowinfolabelstandard{
+      color: #000000;
+      font-size: 12px;
+      font-weight: bold;
+      width: 170px !important;
+      top: 0px;
+      position: absolute;
+      text-align: left;
+    }
+
+    .creditlayoutwindowinfobuton{
+      position: absolute;
+      width: 70px;
+      height: 25px;
+      padding-right: 5px;
+      padding-left: 10px;
+      background: url('../images/button-gold.png') no-repeat scroll 0% 0% / 105% auto transparent;
+      padding-top: 2px;
+      border: medium none;
+      top: 20px;
+      left: 100px;
+    }
+
+    .creditlayoutwindowinfobuton2{
+      position: absolute;
+      width: 70px;
+      height: 25px;
+      padding-right: 5px;
+      padding-left: 10px;
+      background: url('../images/button-gold.png') no-repeat scroll 0% 0% / 105% auto transparent;
+      padding-top: 2px;
+      border: medium none;
+      top: 25px;
+      left: 100px;
+    }
+
+    .creditlayoutwindowcredits{
+      color: #FFD700;
+      font-size: 12px;
+      font-weight: bold;
+      text-align: left;
+      width: 100px !important;
+      position: absolute;
+      left: 5px;
+      top: 30px;
+      padding-right: 15px;
+    }
+
+    .creditlayoutwindowstar{
+      background: url('../images/header-star-gold.png') no-repeat scroll 0% 0% transparent;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: -14px;
+      left: 60px;
+    }
+
+    .creditlayoutwindowoptionslabel{
+      position: absolute;
+      left: 5px;
+      top: 60px;
+      width: 200px !important;
+    }
+
+    .creditlayoutbuybutton{
+      position: absolute !important;
+      left: 5px !important;
+      top: 200px !important;
+    }
+
+    .creditlayoutclosebutton{
+      position: absolute !important;
+      left: 100px !important;
+      top: 200px !important;
+    }
+
+    .creditlayoutbuybutton2{
+      position: absolute !important;
+      left: 5px !important;
+      top: 240px !important;
+    }
+
+    .creditlayoutclosebutton2{
+      position: absolute !important;
+      left: 100px !important;
+      top: 240px !important;
+    }
+
+    .creditlayoutwindowoptions{
+      position: absolute;
+      left: 5px;
+      top: 80px;
+    }
+	
+	 .usernavigation {
+		position: relative;
+		height: 100%;
+		width: 264px;
+		float: right;
+	}
+	
+	.usernavigationphoto{
+		position: absolute;
+		top: 6px;
+		right: 45px;
+	}
+
+    .userlabelclicablelayout {
+      position: relative;
+      height: 100%;
+      width: 264px;
+      float: right;
+    }
+	
+	.scanlayout{
+		height:100%;
+		width:100%;
+	}
+	
+	.mainfooter{
+		bottom:0px;
+		left:0px;
+		width:100%;
+		height: 45px;
+		background:rgb(218,218,218);
+		display:inline;
+		position:absolute;
+		
+	}
+	
+	.comentarpopupcontainer{
+		width:260px;
+		height:140px;
+		resize:both;
+		box-shadow:0px 0px 5px #888888;
+	}
+	
+	.buttonpilscontent{
+		width: 90px;
+		height: 60px;
+	}
+	
+	.diclayout{
+		width: 150px !important;
+		height: 50%;
+		margin-left: 10px;
+		overflow: hidden;
+		position: relative;
+		margin-top: 53px;
+	}
+	
+	.diccustomerlayout{
+		float:right;
+		position:relative;
+		width:107px !important;
+	}
+	
+	.diclayout .v-formlayout-captioncell .v-caption{
+		font-size:10px;
+	}
+	
+	.recipientparentlayout{
+		width:180px;
+		height:225px;
+		float:right;
+		padding-top: 5px;
+		position:relative;
+	}
+	
+	.commentarcontainer{
+		width:100%;
+		height:98%;
+		display:block;
+	}
+	
+	.richtextcommentlayout{
+		width:97%;
+		height:170px;
+		position:relative;
+		display:block;
+		border-bottom:1px solid rgb(218, 218, 218);
+		margin-left:10px;
+	}
+	
+	.v-formlayout-row {
+		margin:0px;
+	}
+	
+	.fakturanrlayout{
+		position: relative;
+		float: right;
+		height: 100%;
+		width: 300px;
+		display: inline-block !important;
+	}
+	
+	.recipientidlayout{
+		width: 100% !important;
+		height: 50%;
+		overflow: hidden;
+		position: relative;
+		float: right;
+		margin-top: 5px;
+	}
+	
+	.scancontainerlayout{
+		height:100%;
+		width:100%;
+	}
+	
+	.buttonscanlayout{
+		width:100%;
+		height:40px;
+		text-align:right;
+		border-bottom:1px solid rgb(218, 218, 218);
+	}
+	
+	.tablecellllayout{
+		position:relative;
+		width:100%;
+    	height:35px;
+	}
+	
+	.attachmentlayout{
+		position: relative;
+		padding-top: 5px;
+		padding-left: 5px;
+		height: auto;
+		min-height: 50px;
+		width: 100%;
+	}
+	
+	.attachmentcomponentslayout{
+		width: 100%;
+		min-height: 50px;
+		height: auto;
+	}
+	
+	.popupmenulayout{
+		min-height:10px;
+		min-width:10px;
+		width:150px !important;
+		height:auto;
+	}
+	
+	.stlayout{
+		position: relative;
+		height: 130px;
+		width: 200px !important;
+		float: right;
+		display:block;
+	}
+	
+	.v-formlayout > .v-spacing{
+        height:3px;
+	}
+	
+	.tflayout{
+		position: absolute;
+		background: rgb(218, 218, 218);
+		height: 25px;
+		bottom:20px;
+		left:10px;
+		right:10px;
+		padding-top:4px;
+		@include border-radius(3px);
+	}
+
+
+	.atuphedl{
+		width: 100%;
+		height: 80px;
+		position: relative;
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+	
+	.atlcon{
+		width:100%;
+	}
+	
+	.atmycp{
+		position:absolute;
+		top:10px;
+		left:10px;
+	}
+	
+	.faiwral{
+		position:relative;
+		width:100%;
+		height:auto;
+		
+	}
+	.fapainadl{
+		height: 30px;
+		width: 400px;
+		position: absolute;
+		bottom: 40px;
+		right: 0px;
+	}
+	.faitla_short{
+		display:block;
+		position:relative;
+		/*height:60px;*/
+        height:30px;
+		width:100%;
+		margin-top:10px;
+	}
+
+    .faitla_long{
+      display:block;
+      position:relative;
+      height:60px;
+      width:100%;
+      margin-top:10px;
+    }
+
+	.v-formlayout-captioncell .v-caption{
+		color:grey;
+	}
+	
+	.pomab{
+		margin-top:1px;
+	}
+	
+	.excrl{
+		position: absolute;
+		width: 165px !important;
+		height: 70px;
+		right:0px;
+		top: 25px;
+	}
+
+	.ntopborder{
+		border-top:none !important;
+	}
+
+	.pilslcont{
+		width:auto;
+		height:auto;
+	}
+
+	.topbutgrodis{
+		top:5px;
+		position:relative;
+		margin-right:20px;
+	}
+
+    .changesview{
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .manualpricing{
+      top: 10px;
+      right: 440px;
+      position: absolute;
+    }
+
+    .indicator{
+      height: 6%;
+      width:20%;
+      top: 47%;
+      right: 40%;
+      position: absolute;
+    }
+
+    .bankorderwindow{
+        height: 100%;
+        width: 100%;
+    }
+
+    .bankorderinnerlayout{
+      height: 90%;
+      width: 100%;
+      position: absolute;
+      left:0px;
+      top:0px;
+      overflow: auto !important;
+    }
+
+    .bankOrderInvoiceLayout{
+        height: 10%;
+        width: 100%;
+        position: relative;
+    }
+
+    .bankOrderInvoiceLayoutPayed{
+      height: 10%;
+      width: 100%;
+      position: relative;
+      background-color: #f08080;
+    }
+
+    .bankorderclosebutton{
+        height: 20px;
+        width: 140px;
+        position: absolute !important;
+        top: 92% !important;
+        right:10px;
+    }
+
+    .bankorderabobutton{
+      height: 20px;
+      width: 140px;
+      position: absolute !important;
+      top: 92% !important;
+      right:160px;
+    }
+
+    .bankordergeminibutton{
+      height: 20px;
+      width: 140px;
+      position: absolute !important;
+      top: 92% !important;
+      right:310px;
+    }
+
+    .bankordervs{
+      position: absolute;
+      top: 25px;
+      left:2%;
+      width:9%;
+    }
+
+    .v-caption-bankordervs .v-captiontext {
+      position: absolute;
+      top: 5px;
+      left:2%;
+      width: 9%;
+    }
+
+    .bankordercs{
+      position: absolute;
+      top: 25px;
+      left:12%;
+      width:5%;
+    }
+
+    .v-caption-bankordercs .v-captiontext {
+      position: absolute;
+      top: 5px;
+      left:12%;
+      width:5%;
+    }
+
+    .bankorderss{
+      position: absolute;
+      top: 25px;
+      left:18%;
+      width:9%;
+    }
+
+    .v-caption-bankorderss .v-captiontext {
+      position: absolute;
+      top: 5px;
+      left:18%;
+      width:9%;
+    }
+
+    .bankordertopay{
+      position: absolute;
+      top: 25px;
+      left:28%;
+      width:11%;
+    }
+
+    .v-caption-bankordertopay .v-captiontext {
+      position: absolute;
+      top: 5px;
+      left:28%;
+      width:11%;
+    }
+
+  .bankorderaccount{
+    position: absolute;
+    top: 25px;
+    left:40%;
+    width:11%;
+  }
+
+  .v-caption-bankorderaccount .v-captiontext {
+    position: absolute;
+    top: 5px;
+    left:40%;
+    width:11%;
+  }
+
+  .bankorderbank{
+    position: absolute;
+    top: 25px;
+    left:52%;
+    width:5%;
+  }
+
+  .v-caption-bankorderbank .v-captiontext {
+    position: absolute;
+    top: 5px;
+    left:52%;
+    width:5%;
+  }
+
+  .bankorderdescription{
+    position: absolute;
+    top: 25px;
+    left:58%;
+    width:27%;
+  }
+
+  .v-caption-bankorderdescription .v-captiontext {
+    position: absolute;
+    top: 5px;
+    left:58%;
+    width:27%;
+  }
+
+  .bankordermaturity{
+    position: absolute;
+    top: 25px;
+    left:86%;
+    //width:11%;
+    width: 96px;
+  }
+
+  .v-caption-bankordermaturity .v-captiontext {
+    position: absolute;
+    top: 5px;
+    left:86%;
+    width:9%;
+  }
+
+  .bankorderremove{
+    background-image: url(../images/kos16x16-cervena.png);
+    background-repeat:no-repeat;
+    height: 16px;
+    width: 16px;
+    background-size: 100% auto;
+    top: 30px;
+    left: 97%;
+    position: absolute;
+  }
+
+  .redborder{
+    border: 2px solid;
+    border-color: red;
+  }
+
+  .leaveworkspace{
+    height: 95%;
+    width: 95%;
+  }
+
+  .leaveworkspacelabel{
+    position: absolute;
+    top:20px;
+    left:10px;
+    width: 95% !important;
+  }
+
+  .leaveworkspaceoption{
+    position: absolute;
+    top:180px;
+    left:140px;
+  }
+
+  .v-caption-leaveworkspaceoption .v-captiontext {
+    position: absolute;
+    top:180px;
+    left:10px;
+  }
+
+  .leaveworkspaceworkspace{
+    position: absolute;
+    top:240px;
+    left:140px;
+  }
+
+  .v-caption-leaveworkspaceworkspace .v-captiontext {
+    position: absolute;
+    top:240px;
+    left:10px;
+  }
+
+  .leaveworkspaceleavebutton{
+    position: absolute;
+    top:280px !important;
+    left:100px;
+  }
+
+  .leaveworkspacecancelbutton{
+    position: absolute;
+    top:280px !important;
+    right:10px;
+  }
+
+  .messageinfostyle{
+    background-color: green !important;
+    font-family: Arial;
+  }
+
+  .messageerrorstyle{
+    background-color: red !important;
+    font-family: Arial;
+  }
+
+  .messagewarningstyle{
+    background-color: #ff9a1f !important;
+    font-family: Arial;
+  }
+
+  .messageinfostylel{
+    position: relative;
+    background-color: green !important;
+    margin-top: 5px;
+    width: 100%;
+    font-family: Arial;
+  }
+
+  .messageerrorstylel{
+    position: relative;
+    background-color: red !important;
+    margin-top: 5px;
+    width: 100%;
+    font-family: Arial;
+  }
+
+  .messagewarningstylel{
+    position: relative;
+    background-color: #ff9a1f !important;
+    margin-top: 5px;
+    width: 100%;
+    font-family: Arial;
+  }
+
+  .messagehistorylayout{
+    width: 550px;
+  }
+
+  .messagehistoryclose{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+  }
+
+  .messagehistorylayoutinner{
+    position: absolute;
+    left: 1%;
+    top: 10%;
+    width: 98%;
+    height: 85%;
+    overflow: auto !important;
+  }
+
+  .oneMessageTime{
+    position: relative;
+    left:5px;
+    top:5px;
+  }
+
+  .oneMessageMessage{
+    position: relative;
+    left:5px;
+    top:5px;
+    height: 60px;
+  }
+
+  .invoicestatestyle{
+    color:black;
+    width: 90px !important;
+    font-size: 12px;
+    font-style: bold;
+    margin-left: 10px;
+  }
+
+  .scanlayoutwithoutscan{
+    position: absolute !important;
+    left: 30%;
+    top: 200px;
+    font-size: 30px !important;
+    line-height: 35px !important;
+    width: 40% !important;
+    text-align: center !important;
+  }
+
+  .scanlayoutwithoutscanlist{
+    position: absolute !important;
+    left: 30%;
+    top: 40%;
+    font-size: 30px !important;
+    line-height: 35px !important;
+  }
+
+  .scanlayoutwithoutscanbutton{
+    position: absolute !important;
+    left: 42%;
+    top: 240px;
+    width: 16% !important;
+    font-size: 30px !important;
+    text-align: center !important;
+  }
+
+  .scanlayoutwithoutscannew{
+    position: absolute !important;
+    left: 30%;
+    top: 10px;
+    font-size: 30px !important;
+    line-height: 35px !important;
+    width: 40% !important;
+    text-align: center !important;
+  }
+
+  .scanlayoutwithoutscanlistnew{
+    position: absolute !important;
+    left: 30%;
+    top: 30%;
+    font-size: 30px !important;
+    line-height: 35px !important;
+  }
+
+  .scanlayoutwithoutscanbuttonnew{
+    //position: absolute !important;
+    left: 42%;
+    top: 0px;
+    width: 16% !important;
+    font-size: 30px !important;
+    text-align: center !important;
+  }
+
+  .paymentqrcode{
+    position: absolute;
+    left:20px;
+    top:40px;
+  }
+
+  .approvershistory{
+    position: absolute;
+    top: 250px;
+    left: 10px;
+    font-style: bold !important;
+    font-size: 16px !important;
+  }
+
+  .approverstip{
+    position:absolute;
+    top:180px;
+    left:10px;
+    font-style: bold !important;
+    font-size: 16px !important;
+  }
+
+  .adduserapprover{
+    position: absolute !important;
+    top: 320px;
+    left: 10px;
+  }
+
+  .todolistlayout{
+    height: 400px;
+    width: 400px;
+  }
+
+  .todolistdetail{
+    height: 400px;
+    width: 400px;
+  }
+
+  .todolisttaskvideo{
+    position: absolute;
+    left:20px;
+    top:30px;
+  }
+
+  .todolistmainlabel{
+    position: absolute;
+    left:20px;
+    top:305px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistvideolabel{
+    position: absolute;
+    left:20px;
+    top:10px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistdetailpart1{
+    position:absolute;
+    left:50px;
+    top: 340px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistdetailpart2{
+    position:absolute;
+    left:50px;
+    top: 380px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistdetailpart3{
+    position:absolute;
+    left:50px;
+    top: 420px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistdetailpart4{
+    position:absolute;
+    left:50px;
+    top: 460px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistdetailpart5{
+    position:absolute;
+    left:50px;
+    top: 500px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistdetailpart6{
+    position:absolute;
+    left:50px;
+    top: 540px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+  }
+
+  .todolistdetailpart1state{
+    position:absolute !important;
+    left:300px !important;
+    top: 340px !important;
+  }
+
+  .todolistdetailpart2state{
+    position:absolute !important;
+    left:300px !important;
+    top: 380px !important;
+  }
+
+  .todolistdetailpart3state{
+     position:absolute !important;
+     left:300px !important;
+     top: 420px !important;
+   }
+
+  .todolistdetailpart4state{
+    position:absolute !important;
+    left:300px !important;
+    top: 460px !important;
+  }
+
+  .todolistdetailpart5state{
+    position:absolute !important;
+    left:300px !important;
+    top: 500px !important;
+  }
+
+  .todolistdetailpart6state{
+    position:absolute !important;
+    left:300px !important;
+    top: 540px !important;
+  }
+
+  .todolistcancel{
+    position:absolute !important;
+    left:0px !important;
+    top: 540px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .approverwindowclose{
+    position:absolute !important;
+    left:200px !important;
+    top: 100px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .approverwindowsave{
+    position:absolute !important;
+    left:0px !important;
+    top: 100px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: black !important;
+  }
+
+  .systememailwindow{}
+
+  .systememailwindowlabel{
+    position:absolute !important;
+    left:20px !important;
+    top: 30px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    color: black !important;
+    width: 80% !important;
+  }
+
+  .systememailwindowemail{
+    position:absolute !important;
+    left:40px !important;
+    top: 100px !important;
+    width: 150px !important;
+  }
+
+  .systememailwindowdomain{
+    position:absolute !important;
+    left:195px !important;
+    top: 100px !important;
+    width: 150px !important;
+  }
+
+  .systememailwindowsave{
+    position:absolute !important;
+    left:20px !important;
+    top: 200px !important;
+    width: 100px !important;
+  }
+
+  .systememailwindowtest{
+    position:absolute !important;
+    left:140px !important;
+    top: 200px !important;
+    width: 100px !important;
+  }
+
+  .systememailwindowtestemail{
+    position:absolute !important;
+    left:260px !important;
+    top: 200px !important;
+    width: 100px !important;
+  }
+
+  .systememailwindowcancel{
+    position:absolute !important;
+    left:380px !important;
+    top: 200px !important;
+    width: 100px !important;
+  }
+
+  .helpbubbleleft {
+    background: #adff2f;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
+  }
+  .helpbubbleleft:before {
+    content:"";
+    position: relative;
+    right: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid #adff2f;
+    border-bottom: 13px solid transparent;
+  }
+
+  .helpbubbleright {
+    background: #adff2f;
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    border-radius:         10px;
+  }
+  .helpbubbleright:before {
+    content:"";
+    position: relative;
+    left: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid #adff2f;
+    border-bottom: 13px solid transparent;
+  }
+
+  .addressbookhelp{
+    position: absolute;
+    height: 50px !important;
+    width: 50px !important;
+    left: 50px !important;
+    top: 50px !important;
+    background-color: black;
+  }
+}

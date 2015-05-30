@@ -1,0 +1,459 @@
+@mixin label{
+
+  .v-caption-companyaddress {
+    position:absolute;
+    top:0px;
+    color: gray;
+    font-size: 13px;
+  }
+
+  .streetname {
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+  }
+
+  .city {
+    position: absolute;
+    top: 20px;
+    font-size: 12px;
+  }
+
+  .country {
+    position: absolute;
+    top: 35px;
+    font-size: 12px;
+  }
+
+
+  .fakturalabel {
+    position: absolute;
+    font-size: 13px;
+    width: 100% !important;
+    top: 50px;
+    right:140px;
+    text-align:right;
+    color:grey;
+  }
+
+  .fakturaincominglabel{
+    position: absolute;
+    font-size: 13px;
+    width: 100% !important;
+    top: 60px;
+    right:140px;
+    text-align:right;
+    color:grey;
+  }
+
+  .banklabel1 {
+    position: relative;
+    font-size: 12px;
+    color: grey;
+    float:left;
+    margin-right:110px;
+    width: 80px !important;
+  }
+
+  .banklabel2 {
+    position: relative;
+    font-size: 12px;
+    color: grey;
+    height: 20px;
+  }
+
+  .v-caption-ibanlabel {
+    color: grey;
+    font-weight: bold;
+    width:50px !important;
+    position:absolute;
+    top:38px;
+    left: 0px;
+  }
+
+  .v-caption-swiftlabel {
+    color: grey;
+    font-weight: bold;
+    width:50px !important;
+    position:absolute;
+    top:38px;
+    right:55px;
+  }
+
+  .ibanlabel {
+    position: absolute;
+    font-size: 12px;
+    top:40px;
+    left:35px;
+    width:155px !important;
+
+  }
+
+  .swiftlabel {
+    position: absolute;
+    font-size: 12px;
+    width:60px !important;
+    top:40px;
+    right:0px;
+  }
+
+  .symbol {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    font-size: 12px;
+    width: 150px !important;
+    color: grey;
+    overflow: show;
+    font-weight: bold;
+  }
+
+  .datum {
+    position: absolute;
+    top: -20px;
+    left: 210px;
+    font-size: 12px;
+    width: 150px !important;
+    color: grey;
+    overflow: show;
+    font-weight: bold;
+  }
+
+  .bsLabel{
+    position:relative;
+    top:2px;
+    width: 100px !important;
+    font-size:12px;
+  }
+
+  .itemcolumnheader {
+    width:100px !important;
+    color: grey;
+    font-size: 12px;
+    position: relative;
+    margin-right: 28px;
+    margin-left: 5px;
+  }
+
+  .itemcolumnvalueheader {
+    width:60px !important;
+    color: grey;
+    font-size: 12px;
+    position: relative;
+    margin-right:14px;
+    text-align:center;
+  }
+
+
+
+
+  .commentarname{
+    position:absolute;
+    left:80px;
+    top:0px;
+    color:rgb(40, 169, 255);
+    font-weight:bold;
+    font-size:13px;
+  }
+
+  .v-label commentarnamereply{
+    color:rgb(40, 169, 255);
+    font-weight:bold;
+    font-size:13px;
+  }
+
+  .commentarcontent{
+    position: absolute;
+    left: 80px;
+    top: 30px;
+    color: rgb(116, 116, 116);
+    font-size: 12px;
+    text-align:justify;
+    line-height:1.3em;
+  }
+
+  .attachmentcommentarcontent{
+    position: absolute;
+    left: 80px;
+    top: 30px;
+    color: rgb(116, 116, 116);
+    font-size: 12px;
+    text-align: justify;
+    line-height: 1.3em;
+    width: 490px !important;
+    height: 90px !important;
+    overflow: auto !important;
+  }
+
+  .badge{
+    width: 16px !important;
+    height: 15px !important;
+    font-size: 10px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    background: rgb(195, 11, 1);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .badge {
+    position: absolute;
+    top: 10px;
+    left: 35px;
+  }
+
+  .premiumaccountlabel{
+    color: #FFD700;
+    font-size: 12px;
+    font-weight: bold;
+    width: 170px !important;
+    top: 0px;
+    position: relative;
+    text-align: right !important;
+  }
+
+  .standardaccountlabel{
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    width: 170px !important;
+    top: 0px;
+    position: relative;
+    text-align: right;
+  }
+
+  .star {
+    background: url(../images/header-star-gold.png);
+    background-repeat: no-repeat;
+    height:20px;
+    width:20px;
+    position:absolute;
+    top:18px;
+    right:65px;
+  }
+
+  .pointlabel {
+    color: #FFD700;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right !important;
+    width: 170px !important;
+    padding-right:15px;
+    margin-bottom:2px;
+  }
+
+  .v-label name{
+    color: rgb(187, 187, 187);
+    font-size: 12px;
+    text-align: right;
+    width: 160px;
+    position:absolute;
+    top:3px;
+    text-align:right;
+    right:100px;
+    font-weight:bold;
+    text-align:right;
+  }
+
+  .v-label role{
+    color: rgb(187, 187, 187);
+    font-size: 12px;
+    text-align: right;
+    width: 160px;
+    position:absolute;
+    top: 17px;
+    text-align:right;
+    right:100px;
+    font-weight:bold;
+  }
+
+  .v-label company{
+    color: white;
+    font-size: 12px;
+    text-align: right;
+    width: 160px;
+    position:absolute;
+    top: 32px;
+    text-align:right;
+    right:100px;
+  }
+
+  .totaldescriptionlabel{
+    position:absolute;
+    bottom:50px;
+    left:0px;
+    width:250px !important;
+    text-align:right;
+    color:grey;
+    font-size:12px;
+  }
+
+  .v-label pricestring {
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
+    font-size: 18px;
+    color: grey;
+    font-weight:bold;
+  }
+
+  .v-label pricetotal {
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    font-size: 18px;
+    color: grey;
+    text-align: right;
+    font-weight:bold;
+  }
+
+  .test{
+    position: absolute;
+    top: 0px;
+    left: 30px;
+    color:white;
+  }
+
+  .flfooter {
+    color: #6B6969;
+    text-shadow: #f3f5f8 0 1px 0;
+    position:absolute;
+    left:35px;
+    width:200px !important;
+  }
+
+  .flfooterBankOrder1 {
+    position:absolute !important;
+    left:150px;
+    height: 20px !important;
+    border:none;
+  }
+
+  .flfooterBankOrder2 {
+    position:absolute;
+    left:280px;
+    background:transparent;
+    border:none;
+    color:rgb(60, 146, 191) !important;
+  }
+
+  .v-caption-flfooter .v-captiontext {
+    color: #6B6969;
+    text-shadow: #f3f5f8 0 1px 0;
+    position:absolute;
+    right:35px;
+  }
+
+  .lilab{
+    width:150px !important;
+    color:rgb(40, 169, 255);
+    font-size:12px;
+  }
+
+
+  .cileft{
+    position:absolute;
+    bottom:10px;
+    left:80px;
+  }
+
+  .ciright{
+    position: absolute;
+    bottom: 10px;
+    left: 180px;
+  }
+
+  .cocompostlb{
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    font-size:13px;
+    font-weight:bold;
+    color:rgb(40, 169, 255);
+  }
+
+  .fafontl {
+    font-size: 12px;
+    color: grey;
+    font-weight: bold;
+  }
+
+  .fainl {
+    position: absolute;
+    left: 25px;
+    top: 5px;
+    width: 100px !important;
+  }
+
+  .faql {
+    position: absolute;
+    top: 5px;
+    left: calc(43% + 30px);
+    width: 100px !important;
+  }
+
+  .fauml {
+    position: absolute;
+    top: 5px;
+    left: calc(50% + 40px);
+    width: 50px !important;
+  }
+
+  .faupl {
+    position: absolute;
+    top: 5px;
+    left: calc(56% + 50px);
+    width: 100px !important;
+  }
+
+  .fatrl {
+    position: absolute;
+    top: 5px;
+    left: calc(71% + 50px);
+    width: 50px !important;
+  }
+
+  .faal {
+    position: absolute;
+    top: 5px;
+    left: calc(82% + 20px);
+    width: 100px !important;
+  }
+
+  .faalppid{
+    position: relative;
+    width: 97px !important;
+    color: grey;
+    top: 3px;
+    float: left;
+  }
+
+  .registrationdonelabel{
+    position: absolute !important;
+    left: 30% !important;
+    top: 20% !important;
+    font-size: 30px !important;
+    color: #7CFC00;
+    width: 40% !important;
+    text-align: center !important;
+    height: 15% !important;
+    line-height: 40px !important;
+  }
+
+  .addressbookhelplabel{
+    color:#ffffff;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .scanlabelnewdoc{
+    position: absolute;
+    left: 42%;
+    top: 150px;
+    width: 16% !important;
+    text-align: center !important;
+  }
+
+}
