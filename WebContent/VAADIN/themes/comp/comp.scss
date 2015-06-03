@@ -31,28 +31,14 @@ $font-color:#626262;
 $grey-light:#E0E0E0;
 $light-blue:#197de1;
 
-@import "../reindeer/reindeer.scss";
+@import "../valo/valo.scss";
 @import "invoicetest.scss";
 @import "table.scss";
 @import "mixins.scss";
 @mixin comp {
-  @include reindeer;
-  @include table;
-  @include invoice;
-  
-  &.v-app, .FlatUI .v-window,  .v-popupview-popup, .v-tooltip, 
-  &.v-app input, &.v-app select, &.v-app button, 
-  &.v-app textarea,  .v-window input,  .v-window select, 
-   .v-window button,  .v-window textarea,  .v-popupview-popup input, 
-   .v-popupview-popup select,  .v-popupview-popup button, .v-caption,
-   .v-popupview-popup textarea,  .v-filterselect-suggestpopup, 
-   .v-datefield-popup,  .v-contextmenu,  .v-Notification, 
-   .v-menubar-submenu,  .v-drag-element,  .v-table-header-drag, v-caption, .v-label,
-   .v-app input{
-  		font:300 12px "Open Sans", sans-serif;
-  		color:$font-color;
-  }
-    
+  @include valo;
+
+
 .validation-error{
 	border:#F72636 !important;
 	box-shadow:0 0 0 2px rgba(253, 55, 55, 0.58), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1) !important;

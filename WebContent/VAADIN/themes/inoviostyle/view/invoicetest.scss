@@ -1,27 +1,121 @@
 @mixin invoicetest{
 /* Start test*/
-.background-grey{
+
+/* Layout */
+.form-distance-left .v-formlayout-captioncell{
+	min-width:125px;
+}
+.layout-separator {
+	border-top: 1px solid #dadada;
+}
+.v-caption-layout-separator {
+	width: 0px;
+	height: 0px;
+	display: inline-block;
+}
+.v-caption-layout-separator .v-captiontext {
+	color: grey;
+	top: -7px;
+	background: white;
+	left: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	position: relative;
+	z-index: 5;
+}
+.v-caption-on-top > .v-caption{
+	height:20px;
+}
+.form-detail{
 	background-color:$grey-light;
-}
-.show-transition{
-	transition-delay: 0s;visibility: visible;opacity: 1;
-}
-.hide-transition{
-	opacity: 0; visibility:hidden;
-}
-.validation-error{
-	border:#F72636 !important;
-	box-shadow:0 0 0 2px rgba(253, 55, 55, 0.58), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
 }
 .v-gridlayout-spacing-on {
 	padding-left: 12px !important;
 }
-
-.overflow-hidden{
-	overflow:hidden;
-}
 .page-invoice-padding{
 	padding:10px;
+}
+
+/* CheckBox */
+.checbox-colored.v-checkbox label{
+	color:#197de1 !important;
+}
+
+/* General */
+ .v-tooltip {
+	background-color: #197de1 !important;
+	border-radius:5px;
+	font-size: 12px !important;
+	color: white !important;
+	padding:5px !important;
+	box-shadow:none !important;
+	border:none !important;
+}
+
+.v-tooltip .v-errormessage {
+	padding: 5px !important;
+	background: transparent !important;
+	color: #FF9595 !important;
+	border: none !important;
+}
+.distance-little-top{
+	margin-top:3px;
+}
+.bigger-bold {
+	font-size: 14px !important;
+	font-weight:bold !important;
+}
+&.v-app .bigger-bold input.v-filterselect-input{
+	font-weight: bold !important;
+	font-size: 14px !important;
+}
+.v-errorindicator{
+	display:none !important;
+}
+.space-margin{
+	padding:10px;
+}
+.text-center{
+	text-align:center !important;
+}
+.text-right{
+	text-align:right !important;
+}
+.text-left{
+	text-align:left !important;
+}
+.label-big{
+	font-size:14px;
+}
+.expandable{
+	height:auto;
+}
+.distance-small{
+	padding:5px;
+}
+.expandable-scroll{
+	overflow-y:scroll !important;
+}
+
+/* Button */
+.remove, .add{
+	-webkit-border-radius: 50px !important;
+	-moz-border-radius: 50px !important;
+	border-radius: 50px !important;
+	width:31px !important;
+	height:30px !important;
+}
+.remove:before{
+	content:"\f056";
+	font-family:FontAwesome;
+}
+.add:before{
+	content:"\f055";
+	font-family:FontAwesome;
 }
 .danger{
 	height: 30px;
@@ -80,7 +174,7 @@
 	background-color: rgba(65, 211, 48, 0.1);
 	cursor:pointer;
 }
-.borderless-colored:hover {
+.borderless-colored:hover, .checkbox-collored.v-checkbox label:hover {
 	color: #4396ea;
 	cursor:pointer;
 }
@@ -98,31 +192,27 @@
 	padding:5px;
 	padding-top:10px;
 }
-	.text-align-right{
-		text-align:right !important;
-	}
-	.text-align-center{
-		text-align:center;
-	}
-	.distance-right{
-		padding-right:3px;
-	}
 
-	.label-big{
-		font-size:14px;
-	}
-	
-	.expandable{
-		height:auto;
-	}
-	
-	.distance-small{
-		padding:5px;
-	}
-	
-	.expandable-scroll{
-		overflow-y:scroll !important;
-	}
+
+/* Text */
+
+.validation-error{
+	border:#F72636 !important;
+	box-shadow:0 0 0 2px rgba(253, 55, 55, 0.58), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+.overflow-hidden{
+	overflow:hidden;
+}
+.text-align-right{
+	text-align:right !important;
+}
+.text-align-center{
+	text-align:center;
+}
+.distance-right{
+	padding-right:3px;
+}
+
 .v-textfield, .v-textarea {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -297,7 +387,7 @@
  	overflow:visible;
  }
  .v-datefield-popupcalendar{
- 	padding-right:0px;
+ 	padding-right:0px !important;
  	position:relative;
  	height:30px;
  	overflow:visible !important;
@@ -307,7 +397,7 @@
 	border: 1px solid #c5c5c5;
 	width: 185px;
 	border-radius: 4px !important;
-	padding-left: 26px;
+	padding-left: 30px !important;
 	text-align: right;
  }
  .v-datefield-popupcalendar .v-datefield-button{

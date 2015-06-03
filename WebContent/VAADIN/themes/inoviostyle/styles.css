@@ -7564,36 +7564,138 @@ body .inoviostyle.v-app .v-app-loading {
 	background-image: url(../reindeer/window/img/black/content-bg.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
 }
 
-.inoviostyle .background-grey {
+.inoviostyle .form-distance-left .v-formlayout-captioncell {
+	min-width: 125px;
+}
+
+.inoviostyle .layout-separator {
+	border-top: 1px solid #dadada;
+}
+
+.inoviostyle .v-caption-layout-separator {
+	width: 0px;
+	height: 0px;
+	display: inline-block;
+}
+
+.inoviostyle .v-caption-layout-separator .v-captiontext {
+	color: grey;
+	top: -7px;
+	background: white;
+	left: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	position: relative;
+	z-index: 5;
+}
+
+.inoviostyle .v-caption-on-top > .v-caption {
+	height: 20px;
+}
+
+.inoviostyle .form-detail {
 	background-color: #E0E0E0;
-}
-
-.inoviostyle .show-transition {
-	transition-delay: 0s;
-	visibility: visible;
-	opacity: 1;
-}
-
-.inoviostyle .hide-transition {
-	opacity: 0;
-	visibility: hidden;
-}
-
-.inoviostyle .validation-error {
-	border: #F72636 !important;
-	box-shadow: 0 0 0 2px rgba(253, 55, 55, 0.58), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
 }
 
 .inoviostyle .v-gridlayout-spacing-on {
 	padding-left: 12px !important;
 }
 
-.inoviostyle .overflow-hidden {
-	overflow: hidden;
-}
-
 .inoviostyle .page-invoice-padding {
 	padding: 10px;
+}
+
+.inoviostyle .checbox-colored.v-checkbox label {
+	color: #197de1 !important;
+}
+
+.inoviostyle .v-tooltip {
+	background-color: #197de1 !important;
+	border-radius: 5px;
+	font-size: 12px !important;
+	color: white !important;
+	padding: 5px !important;
+	box-shadow: none !important;
+	border: none !important;
+}
+
+.inoviostyle .v-tooltip .v-errormessage {
+	padding: 5px !important;
+	background: transparent !important;
+	color: #FF9595 !important;
+	border: none !important;
+}
+
+.inoviostyle .distance-little-top {
+	margin-top: 3px;
+}
+
+.inoviostyle .bigger-bold {
+	font-size: 14px !important;
+	font-weight: bold !important;
+}
+
+.inoviostyle.v-app .bigger-bold input.v-filterselect-input {
+	font-weight: bold !important;
+	font-size: 14px !important;
+}
+
+.inoviostyle .v-errorindicator {
+	display: none !important;
+}
+
+.inoviostyle .space-margin {
+	padding: 10px;
+}
+
+.inoviostyle .text-center {
+	text-align: center !important;
+}
+
+.inoviostyle .text-right {
+	text-align: right !important;
+}
+
+.inoviostyle .text-left {
+	text-align: left !important;
+}
+
+.inoviostyle .label-big {
+	font-size: 14px;
+}
+
+.inoviostyle .expandable {
+	height: auto;
+}
+
+.inoviostyle .distance-small {
+	padding: 5px;
+}
+
+.inoviostyle .expandable-scroll {
+	overflow-y: scroll !important;
+}
+
+.inoviostyle .remove, .inoviostyle .add {
+	-webkit-border-radius: 50px !important;
+	-moz-border-radius: 50px !important;
+	border-radius: 50px !important;
+	width: 31px !important;
+	height: 30px !important;
+}
+
+.inoviostyle .remove:before {
+	content: "\f056";
+	font-family: FontAwesome;
+}
+
+.inoviostyle .add:before {
+	content: "\f055";
+	font-family: FontAwesome;
 }
 
 .inoviostyle .danger {
@@ -7655,7 +7757,7 @@ body .inoviostyle.v-app .v-app-loading {
 	cursor: pointer;
 }
 
-.inoviostyle .borderless-colored:hover {
+.inoviostyle .borderless-colored:hover, .inoviostyle .checkbox-collored.v-checkbox label:hover {
 	color: #4396ea;
 	cursor: pointer;
 }
@@ -7675,6 +7777,15 @@ body .inoviostyle.v-app .v-app-loading {
 	padding-top: 10px;
 }
 
+.inoviostyle .validation-error {
+	border: #F72636 !important;
+	box-shadow: 0 0 0 2px rgba(253, 55, 55, 0.58), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.inoviostyle .overflow-hidden {
+	overflow: hidden;
+}
+
 .inoviostyle .text-align-right {
 	text-align: right !important;
 }
@@ -7685,22 +7796,6 @@ body .inoviostyle.v-app .v-app-loading {
 
 .inoviostyle .distance-right {
 	padding-right: 3px;
-}
-
-.inoviostyle .label-big {
-	font-size: 14px;
-}
-
-.inoviostyle .expandable {
-	height: auto;
-}
-
-.inoviostyle .distance-small {
-	padding: 5px;
-}
-
-.inoviostyle .expandable-scroll {
-	overflow-y: scroll !important;
 }
 
 .inoviostyle .v-textfield, .inoviostyle .v-textarea {
@@ -7894,7 +7989,7 @@ body .inoviostyle.v-app .v-app-loading {
 }
 
 .inoviostyle .v-datefield-popupcalendar {
-	padding-right: 0px;
+	padding-right: 0px !important;
 	position: relative;
 	height: 30px;
 	overflow: visible !important;
@@ -7905,7 +8000,7 @@ body .inoviostyle.v-app .v-app-loading {
 	border: 1px solid #c5c5c5;
 	width: 185px;
 	border-radius: 4px !important;
-	padding-left: 26px;
+	padding-left: 30px !important;
 	text-align: right;
 }
 
@@ -7971,7 +8066,6 @@ body .inoviostyle.v-app .v-app-loading {
 	border-bottom: 1px solid #E0E0E0;
 	margin: 5px;
 	padding-bottom: 5px;
-	padding-right: 10px;
 }
 
 .inoviostyle .root {
@@ -9618,6 +9712,10 @@ body .inoviostyle.v-app .v-app-loading {
 	border: none;
 }
 
+.inoviostyle .total-calculate-table .v-table-caption-container {
+	padding-right: 3px !important;
+}
+
 .inoviostyle .total-calculate-table .v-table-header-wrap {
 	background-image: none !important;
 	border: none;
@@ -9636,6 +9734,8 @@ body .inoviostyle.v-app .v-app-loading {
 
 .inoviostyle .total-calculate-table .v-table-cell-content {
 	border: none !important;
+	padding: 0 7px !important;
+	padding-left: 5px !important;
 }
 
 .inoviostyle .total-calculate-table .v-table-footer-wrap {
@@ -9652,10 +9752,6 @@ body .inoviostyle.v-app .v-app-loading {
 .inoviostyle .total-calculate-table .v-table-footer-container {
 	text-align: right !important;
 	padding-right: 1px !important;
-}
-
-.inoviostyle .total-calculate-table .v-table-cell-wrapper {
-	padding: 5px 1px;
 }
 
 .inoviostyle .myfiltertable.v-table {

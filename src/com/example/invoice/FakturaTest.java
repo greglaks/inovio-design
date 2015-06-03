@@ -1,4 +1,4 @@
-package com.example.comp;
+package com.example.invoice;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import com.vaadin.data.Container;
 import com.vaadin.data.Item;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.data.Property.ValueChangeListener;
@@ -14,6 +15,7 @@ import com.vaadin.data.Validator;
 import com.vaadin.event.FieldEvents.BlurEvent;
 import com.vaadin.event.FieldEvents.BlurListener;
 import com.vaadin.server.ThemeResource;
+import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -65,7 +67,6 @@ public class FakturaTest extends VerticalLayout{
 	private Label amountLabel;
 	private double subTotal;
 	private ComboBox currencyCombo;
-	private FormAdvancedLayout advancedLayout = new FormAdvancedLayout();
 	private ValueChangeListener amountTextListener = new ValueChangeListener() {
 		
 		@Override
@@ -79,11 +80,46 @@ public class FakturaTest extends VerticalLayout{
 		@Override
 		public void validate(Object value) throws InvalidValueException {
 			if(value.equals("")){
+				supplierStreet.addStyleName("validation-error");
 				throw new InvalidValueException("This field is required");
+			}
+			else{
+				supplierStreet.removeStyleName("validation-error");
 			}
 			
 		}
 	};
+	private BankDetailLayoutController bankController;
+	private CustomerDetailLayoutController customerController;
+	private PaymentLayoutController paymentController;
+	private TextField supplierStreet;
+	private Button hideButton;
+	private ClickListener hideTextDescriptionListener = new ClickListener(){
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				String caption = hideButton.getCaption();
+				for(FakturaItem item: itemList){
+					TextArea descriptionText = item.getDescriptionText();
+					if(caption.equals("Show")){
+						descriptionText.setVisible(true);
+					}
+					else{
+						descriptionText.setVisible(false);
+					}
+				}
+				if(caption.equals("Show")){
+					hideButton.setCaption("Hide");
+				}
+				else{
+					hideButton.setCaption("Show");
+				}
+				
+
+								
+			}
+			
+		};
 
 	public FakturaTest(){
 		addStyleName("page-invoice-padding");
@@ -125,15 +161,15 @@ public class FakturaTest extends VerticalLayout{
 		itemTable = new GridLayout();
 		itemTable.setSpacing(true);
 		itemTable.setWidth("100%");
-		itemTable.setColumns(7);
+		itemTable.setColumns(8);
 		
-		Label l0 = new Label("");
-		Label l1 = new Label("Item");
-		Label l2 = new Label("Quantity");
-		Label l3 = new Label("Unit");
-		Label l4 = new Label("Unit price");
-		Label l5 = new Label("VAT");
-		Label l6 = new Label("Total");
+		Label l1 = new Label("");
+		Label l2 = new Label("Item");
+		Label l3 = new Label("Quantity");
+		Label l4 = new Label("Unit");
+		Label l5 = new Label("Unit price");
+		Label l6 = new Label("VAT");
+		Label l7 = new Label("Total");
 		
 		l1.addStyleName("text-align-center");
 		l2.addStyleName("text-align-center");
@@ -141,38 +177,58 @@ public class FakturaTest extends VerticalLayout{
 		l4.addStyleName("text-align-center");
 		l5.addStyleName("text-align-center");
 		l6.addStyleName("text-align-center");
+		l7.addStyleName("text-align-center");
 		
-		itemTable.addComponent(l0);
 		itemTable.addComponent(l1);
 		itemTable.addComponent(l2);
 		itemTable.addComponent(l3);
 		itemTable.addComponent(l4);
 		itemTable.addComponent(l5);
 		itemTable.addComponent(l6);
+		itemTable.addComponent(l7);
 		
-		itemTable.setColumnExpandRatio(0, 0.5f);
-		itemTable.setColumnExpandRatio(1, 1.5f);
-		itemTable.setColumnExpandRatio(2, 0.5f);
-		itemTable.setColumnExpandRatio(3, 0.5f);
-		itemTable.setColumnExpandRatio(4, 1.0f);
-		itemTable.setColumnExpandRatio(5, 1.0f);
-		itemTable.setColumnExpandRatio(6, 1.0f);
+		l1.setWidth("35px");
+		l2.setWidth("100%");
+		l3.setWidth("45px");
+		l4.setWidth("43px");
+		l5.setWidth("80px");
+		l6.setWidth("80px");
+		l7.setWidth("85px");
 		
-		Button addButton = new Button("Add item");
+		itemTable.setColumnExpandRatio(0, 0.0f);
+		itemTable.setColumnExpandRatio(1, 1.0f);
+		itemTable.setColumnExpandRatio(2, 0.0f);
+		itemTable.setColumnExpandRatio(3, 0.0f);
+		itemTable.setColumnExpandRatio(4, 0.0f);
+		itemTable.setColumnExpandRatio(5, 0.0f);
+		itemTable.setColumnExpandRatio(6, 0.0f);
+		
+		hideButton = new Button("Show");
+		hideButton.setPrimaryStyleName("borderless-colored");
+		hideButton.addClickListener(hideTextDescriptionListener);
+		
+		HorizontalLayout buttonLayout = new HorizontalLayout();
+		buttonLayout.setSpacing(true);
+		
+		Button addButton = new Button();
 		addButton.setPrimaryStyleName("friendly");
+		addButton.addStyleName("add");
 		addButton.addClickListener(new ClickListener(){
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				itemList.add(new FakturaItem(itemTable, FakturaTest.this));
+				itemList.add(new FakturaItem(itemTable, FakturaTest.this, hideButton));
 				itemTable.markAsDirty();
 			}
 			
 		});
 		
+		buttonLayout.addComponent(addButton);
+		buttonLayout.addComponent(hideButton);
+		
 		layout.addComponent(itemTable);
-		layout.addComponent(addButton);
-		layout.setComponentAlignment(addButton, Alignment.BOTTOM_LEFT);
+		layout.addComponent(buttonLayout);
+		layout.setComponentAlignment(buttonLayout, Alignment.BOTTOM_LEFT);
 		addButton.click();
 		return layout;
 	}
@@ -198,18 +254,20 @@ public class FakturaTest extends VerticalLayout{
 		
 		CheckBox manualCheckbox = new CheckBox("Manual input");
 		manualCheckbox.setWidth("100%");
+		manualCheckbox.addStyleName("checbox-colored");
+		manualCheckbox.addStyleName("distance-little-top");
 		manualCheckbox.addValueChangeListener(new ValueChangeListener() {
 			
 			@Override
 			public void valueChange(ValueChangeEvent event) {
-				Collection cols = sumTotalTable.getItemIds();
+				Container container = sumTotalTable.getContainerDataSource();
+				Collection cols = container.getItemIds();
 				Boolean value = (Boolean) event.getProperty().getValue();
 				
 				for(Object c : cols){
-					Object o = sumTotalTable.getItem(c);
-					TextField basis = (TextField) sumTotalTable.getContainerProperty(o, BASIS).getValue();
-					TextField vat = (TextField) sumTotalTable.getContainerProperty(o,VAT).getValue();
-					TextField total = (TextField) sumTotalTable.getContainerProperty(o, TOTAL).getValue();
+					TextField basis = (TextField) container.getContainerProperty(c, BASIS).getValue();
+					TextField vat = (TextField) container.getContainerProperty(c, VAT).getValue();
+					TextField total = (TextField) container.getContainerProperty(c, TOTAL).getValue();
 					
 					basis.setReadOnly(!value);
 					vat.setReadOnly(!value);
@@ -219,21 +277,23 @@ public class FakturaTest extends VerticalLayout{
 			}
 		});
 		Image qrcode = new Image();
-		qrcode.setWidth("100px");
-		qrcode.setHeight("100px");
-		qrcode.setSource(new ThemeResource("image/jpeg.jpg"));
-		checkboxQrCodeLayout.addComponent(manualCheckbox);
+		qrcode.setWidth("125px");
+		qrcode.setHeight("125px");
+		qrcode.setSource(new ThemeResource("images/barcode.png"));
 		checkboxQrCodeLayout.addComponent(qrcode);
-		checkboxQrCodeLayout.setComponentAlignment(manualCheckbox, Alignment.TOP_RIGHT);
 		checkboxQrCodeLayout.setComponentAlignment(qrcode, Alignment.MIDDLE_LEFT);
 		
 		layout1.addComponent(checkboxQrCodeLayout);
+		layout1.addComponent(manualCheckbox);
 		layout1.addComponent(calcTable);
 		
 		layout1.setComponentAlignment(calcTable, Alignment.TOP_RIGHT);
+		layout1.setComponentAlignment(manualCheckbox, Alignment.TOP_RIGHT);
 		layout1.setComponentAlignment(checkboxQrCodeLayout, Alignment.TOP_LEFT);
-		layout1.setExpandRatio(checkboxQrCodeLayout, 1.0f);
-		layout1.setExpandRatio(calcTable, 2.0f);
+		
+		layout1.setExpandRatio(checkboxQrCodeLayout, 2.5f);
+		layout1.setExpandRatio(calcTable, 5.5f);
+		layout1.setExpandRatio(manualCheckbox, 1.5f);
 		
 		HorizontalLayout layout2 = new HorizontalLayout();
 		layout2.setWidth("100%");
@@ -246,6 +306,8 @@ public class FakturaTest extends VerticalLayout{
 		layout2.addComponent(rightLayout);
 		layout2.setComponentAlignment(leftlayout,Alignment.TOP_LEFT);
 		layout2.setComponentAlignment(rightLayout,Alignment.TOP_RIGHT);
+		layout2.setExpandRatio(leftlayout, 4.0f);
+		layout2.setExpandRatio(rightLayout, 6.0f);
 		
 		layout.addComponent(layout1);
 		layout.addComponent(layout2);
@@ -294,6 +356,9 @@ public class FakturaTest extends VerticalLayout{
 		additionalAmountText.addStyleName("text-align-right");
 		amountLabel.addStyleName("text-align-right");
 		
+		totalLabel.addStyleName("bigger-bold");
+		amountLabel.addStyleName("bigger-bold");
+		
 		layout1.addComponent(noteText);
 		layout1.addComponent(totalLabel);
 		layout2.addComponent(additionalAmountText);
@@ -307,9 +372,9 @@ public class FakturaTest extends VerticalLayout{
 		layout.addComponent(layout1);
 		layout.addComponent(layout2);
 		
-		layout.setExpandRatio(paidLabel, 1.0f);
-		layout.setExpandRatio(layout1, 2.0f);
-		layout.setExpandRatio(layout2, 1.0f);
+		layout.setExpandRatio(paidLabel, 13.0f);
+		layout.setExpandRatio(layout1, 57.0f);
+		layout.setExpandRatio(layout2, 30.0f);
 		
 		return layout;
 	}
@@ -334,7 +399,7 @@ public class FakturaTest extends VerticalLayout{
 	private Table createCalcTable() {
 		sumTotalTable = new Table();
 		sumTotalTable.setSortEnabled(false);
-		sumTotalTable.setWidth("80%");
+		sumTotalTable.setWidth("100%");
 		sumTotalTable.addStyleName("total-calculate-table");
 		sumTotalTable.addContainerProperty(LOCAL_CURRENCY, Component.class, null);
 		sumTotalTable.addContainerProperty(BASIS, Component.class, null);
@@ -342,9 +407,9 @@ public class FakturaTest extends VerticalLayout{
 		sumTotalTable.addContainerProperty(TOTAL, Component.class, null);
 		
 		sumTotalTable.setColumnExpandRatio(LOCAL_CURRENCY, 1.5f);
-		sumTotalTable.setColumnExpandRatio(BASIS, 1.0f);
+		sumTotalTable.setColumnExpandRatio(BASIS, 1.2f);
 		sumTotalTable.setColumnExpandRatio(VAT, 1.5f);
-		sumTotalTable.setColumnExpandRatio(TOTAL, 1.0f);
+		sumTotalTable.setColumnExpandRatio(TOTAL, 0.8f);
 		
 		sumTotalTable.setColumnAlignment(BASIS, Align.RIGHT);
 		sumTotalTable.setColumnAlignment(VAT, Align.RIGHT);
@@ -365,125 +430,62 @@ public class FakturaTest extends VerticalLayout{
 		wrapperLayout.setSpacing(true);
 		wrapperLayout.setWidth("100%");
 
-		// VS, CS, SS
-		VerticalLayout childLayout1 = new VerticalLayout();
-		childLayout1.setMargin(false);
-		childLayout1.setSpacing(true);
-		childLayout1.setWidth("100px");
-
-        TextField vsSymbol = new TextField("vs");
-        TextField ksSymbol = new TextField("cs");
-        TextField ssSymbol = new TextField("ss");
-		
-//		vsText.addStyleName("text-in-form");
-//		csText.addStyleName("text-in-form");
-//		ssText.addStyleName("text-in-form");
-
-        vsSymbol.setWidth("100%");
-        ksSymbol.setWidth("100%");
-        ssSymbol.setWidth("100%");
-		
-//		childLayout1.addComponent(vsSymbol);
-//		childLayout1.addComponent(ksSymbol);
-		childLayout1.addComponent(ssSymbol);
-		
-		VerticalLayout childLayout2 = new VerticalLayout();
-		childLayout2.setMargin(false);
-		childLayout2.setSpacing(true);
-		childLayout2.setWidth("150px");
-
+        TextField vsSymbol = new TextField("VS");
+        TextField ksSymbol = new TextField("CS");
+        TextField ssSymbol = new TextField("SS");
+        
         DateField issueDate = new DateField("Issue date");
         DateField maturityDate = new DateField("Due date");
         DateField dateOfTaxableSupply = new DateField("Date of taxable supply");
-		
-//		exposureDate.addStyleName("text-in-form");
-//		maturityDate.addStyleName("text-in-form");
-//		taxableDate.addStyleName("text-in-form");
+        
+        ComboBox paymentCombo = new ComboBox("Payment");
+        
+        TextField orderNumberText = new TextField("Order number");
+        currencyCombo = new ComboBox("Currency");
+        currencyCombo.addValueChangeListener(new ValueChangeListener() {
+        	
+        	@Override
+        	public void valueChange(ValueChangeEvent event) {
+        		calculateTotalPrice();
+        	}
+        });
+        
+        TextField exchangeAmount = new TextField("Amount");
+        TextField exchangeRate = new TextField("Exchange rate");
+        
+        paymentController = new PaymentLayoutController(wrapperLayout, vsSymbol, ksSymbol, ssSymbol, issueDate, maturityDate, dateOfTaxableSupply, paymentCombo, orderNumberText, currencyCombo, exchangeAmount, exchangeRate);
+        paymentController.hideDetail();
 
-        issueDate.setWidth("100%");
-		maturityDate.setWidth("100%");
-        dateOfTaxableSupply.setWidth("100%");
-		
-//		childLayout2.addComponent(issueDate);
-		childLayout2.addComponent(maturityDate);
-//		childLayout2.addComponent(dateOfTaxableSupply);
-		
-		VerticalLayout childLayout3 = new VerticalLayout();
-		childLayout3.setMargin(false);
-		childLayout3.setSpacing(true);
-		childLayout3.setWidth("140px");
-		
-		ComboBox paymentCombo = new ComboBox("Payment");
-		TextField orderNumberText = new TextField("Order number");
-		currencyCombo = new ComboBox("Currency");
-		currencyCombo.addValueChangeListener(new ValueChangeListener() {
-			
-			@Override
-			public void valueChange(ValueChangeEvent event) {
-				calculateTotalPrice();
-			}
-		});
 		insertCurrency(currencyCombo);
 		currencyCombo.setNullSelectionAllowed(false);
 		
-		paymentCombo.setWidth("100%");
-		orderNumberText.setWidth("100%");
-		currencyCombo.setWidth("100%");
-
-        TextField orderNumber = new TextField ("orderNumber");
-        ComboBox payment = new ComboBox("Payment");;
-        ComboBox currency = new ComboBox("Currency");
-
-        payment.setWidth("100%");
-        orderNumber.setWidth("100%");
-        currency.setWidth("100%");
-		
-//		paymentCombo.addStyleName("text-in-form");
-//		orderNumberText.addStyleName("text-in-form");
-//		currencyCombo.addStyleName("text-in-form");
-		
-		childLayout3.addComponent(payment);
-//		childLayout3.addComponent(orderNumber);
-//		childLayout3.addComponent(currency);
-		
-		VerticalLayout childLayout4 = new VerticalLayout();
-		childLayout4.setMargin(false);
-		childLayout4.setSpacing(true);
-		childLayout4.setWidth("170px");
-
-        TextField exchangeAmount = new TextField("Amount");
-        TextField exchangeRate = new TextField("Exchange rate");
-		
-//		quantityText.addStyleName("text-in-form");
-//		exchangeRateText.addStyleName("text-in-form");
-
-        exchangeAmount.setWidth("100%");
-        exchangeRate.setWidth("100%");
-		
-//		childLayout4.addComponent(exchangeAmount);
-		childLayout4.addComponent(exchangeRate);
-//		childLayout4.setComponentAlignment(exchangeAmount, Alignment.TOP_RIGHT);
-		childLayout4.setComponentAlignment(exchangeRate, Alignment.TOP_RIGHT);
-		
-		wrapperLayout.addComponent(childLayout1);
-		wrapperLayout.addComponent(childLayout2);
-		wrapperLayout.addComponent(childLayout3);
-		wrapperLayout.addComponent(childLayout4);		
-		
-		wrapperLayout.setComponentAlignment(childLayout1, Alignment.TOP_LEFT);
-		wrapperLayout.setComponentAlignment(childLayout2, Alignment.TOP_CENTER);
-		wrapperLayout.setComponentAlignment(childLayout3, Alignment.TOP_CENTER);
-		wrapperLayout.setComponentAlignment(childLayout4, Alignment.TOP_RIGHT);		
-
 		TextArea descriptionUpItemLabel = new TextArea();
         descriptionUpItemLabel.setRows(3);
-//		noteText.addStyleName("text-in-form");
         descriptionUpItemLabel.addStyleName("text-center");
         descriptionUpItemLabel.setInputPrompt("Insert comment here");
         descriptionUpItemLabel.setWidth("100%");
+        
+		final Button hideShowButton = new Button("Show payment detail");
+		hideShowButton.setPrimaryStyleName("borderless-colored");
+		hideShowButton.addClickListener(new ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				if(paymentController.isHidden()){
+					paymentController.showDetail();
+					hideShowButton.setCaption("Hide payment detail");
+				}
+				else{
+					paymentController.hideDetail();
+					hideShowButton.setCaption("Show payment detail");
+				}
+				
+			}
+		});
 		
 		layout.addComponent(wrapperLayout);
-		layout.addComponent(descriptionUpItemLabel);
+		layout.addComponent(hideShowButton);
+		//layout.addComponent(descriptionUpItemLabel);
 
 		
 		return layout;
@@ -502,6 +504,7 @@ public class FakturaTest extends VerticalLayout{
 		layout.setSpacing(true);
 		layout.setMargin(false);
 		layout.setWidth("100%");
+		layout.setHeight("270px");
 		
 		//Faktura choice
 		VerticalLayout leftLayout = new VerticalLayout();
@@ -511,181 +514,118 @@ public class FakturaTest extends VerticalLayout{
 		leftLayout.setHeight("100%");
 		
 		ComboBox fakturaChoice = new ComboBox();
-		final Button hideShowButton = new Button("Show advanced");
-		hideShowButton.addClickListener(new ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				if(advancedLayout.isHidden()){
-					advancedLayout.removeStyleName("hide-transition");
-					advancedLayout.addStyleName("show-transition");
-					advancedLayout.setHidden(false);
-					addComponent(advancedLayout,2);
-					hideShowButton.setCaption("Hide advanced");
-				}else{
-					advancedLayout.removeStyleName("show-transition");
-					advancedLayout.addStyleName("hide-transition");
-					advancedLayout.setHidden(true);
-					removeComponent(advancedLayout);
-					hideShowButton.setCaption("Show advanced");
-				}
-	
-				
-			}
-		});
-		hideShowButton.setPrimaryStyleName("borderless-colored");
-//		fakturaChoice.addStyleName("text-in-form");
+
 		fakturaChoice.setWidth("180px");
 		
-		HorizontalLayout bankLayout = createBankLayout();
+		VerticalLayout bankLayout = createBankLayout();
+		
 		
 		fakturaChoice.setInputPrompt("Please choose invoice");
 		
 		leftLayout.addComponent(fakturaChoice);
-//		leftLayout.addComponent(bankLayout);
-		leftLayout.addComponent(hideShowButton);
+		leftLayout.addComponent(bankLayout);
 		leftLayout.setComponentAlignment(fakturaChoice, Alignment.TOP_LEFT);
-//		leftLayout.setComponentAlignment(bankLayout, Alignment.MIDDLE_LEFT);
-		leftLayout.setComponentAlignment(hideShowButton, Alignment.BOTTOM_LEFT);
+		leftLayout.setComponentAlignment(bankLayout, Alignment.MIDDLE_LEFT);
 		
-//		leftLayout.setExpandRatio(fakturaChoice, 0.25f);
-//		leftLayout.setExpandRatio(bankLayout, 0.75f);
+		leftLayout.setExpandRatio(fakturaChoice, 0.45f);
+		leftLayout.setExpandRatio(bankLayout, 0.55f);
 		
 		//Customer
-		VerticalLayout rightLayout = new VerticalLayout();
+		final VerticalLayout rightLayout = new VerticalLayout();
 		rightLayout.setCaption("Customer");
-		rightLayout.setWidth("190px");
+		rightLayout.setWidth("180px");
 		rightLayout.setMargin(false);
 		rightLayout.setSpacing(true);
 		
-		VerticalLayout customerLayout = new VerticalLayout();
+		final VerticalLayout customerLayout = new VerticalLayout();
 		customerLayout.setMargin(false);
 		customerLayout.setSpacing(true);
-		customerLayout.setWidth("190px");
+		customerLayout.setWidth("100%");
 		
 		ComboBox customerCombo = new ComboBox();
-		TextField addressText = new TextField();
+		HorizontalLayout customerIdLayout = new HorizontalLayout();
 		
-		HorizontalLayout zipCityLayout = new HorizontalLayout();
-		
-		zipCityLayout.setMargin(false);
-		zipCityLayout.setSpacing(true);
-		zipCityLayout.setWidth("100%");
-		
-		TextField zipText = new TextField();
-		TextField cityText = new TextField();
-		ComboBox countryText = new ComboBox();
-		
-		zipCityLayout.addComponent(zipText);
-		zipCityLayout.addComponent(cityText);
-		
-		customerCombo.setInputPrompt("Customer");
-		addressText.setInputPrompt("Address");
-		zipText.setInputPrompt("Zip code");
-		cityText.setInputPrompt("City");
-		countryText.setInputPrompt("Country");
-		
-		customerCombo.setWidth("100%");
-		addressText.setWidth("100%");
-		zipText.setWidth("100%");
-		cityText.setWidth("100%");
-		countryText.setWidth("100%");
-		
-//		customerCombo.addStyleName("text-in-form");
-//		addressText.addStyleName("text-in-form");
-//		zipText.addStyleName("text-in-form");
-//		cityText.addStyleName("text-in-form");
-//		countryText.addStyleName("text-in-form");
-		
-		customerLayout.addComponent(customerCombo);
-		customerLayout.addComponent(addressText);
-		customerLayout.addComponent(zipCityLayout);
-//		customerLayout.addComponent(countryText);
-		
-		rightLayout.addComponent(customerLayout);
-		
-		//Tax ARES
-		HorizontalLayout taxAres = new HorizontalLayout();
-		taxAres.setMargin(false);
-		taxAres.setSpacing(true);
-		taxAres.setWidth("190px");
-		
-		VerticalLayout taxLayout = new VerticalLayout();
-		taxLayout.setMargin(false);
-		taxLayout.setSpacing(true);
-		taxLayout.setWidth("100%");
-		
-		TextField taxText = new TextField();
-		ComboBox taxIdCombo = new ComboBox();
-		
-		taxText.setWidth("100%");
-		taxIdCombo.setWidth("100%");
-		
-//		taxIdCombo.addStyleName("text-in-form");
-//		taxText.addStyleName("text-in-form");
-		
-		taxLayout.addComponent(taxIdCombo);
-		taxLayout.addComponent(taxText);
-		
+		customerIdLayout.setMargin(false);
+		customerIdLayout.setSpacing(true);
+		customerIdLayout.setWidth("100%");
+
 		Button aresButton = new Button("ARES");
 		aresButton.setPrimaryStyleName("borderless-colored");
+		aresButton.addStyleName("text-center");
+		ComboBox taxIdCombo = new ComboBox();
+		taxIdCombo.setWidth("110px");
 		
-		taxAres.addComponent(taxLayout);
-		taxAres.addComponent(aresButton);
-		taxAres.setComponentAlignment(taxLayout, Alignment.TOP_LEFT);
-		taxAres.setComponentAlignment(aresButton, Alignment.TOP_LEFT);
+		customerIdLayout.addComponent(taxIdCombo);
+		customerIdLayout.addComponent(aresButton);
 		
-		rightLayout.addComponent(taxAres);
+		customerCombo.setInputPrompt("Customer");	
+		customerCombo.setWidth("100%");
+		
+		final Button customerAdvancedButton = new Button("Show customer detail");
+		customerAdvancedButton.setWidth("45px");
+		customerController = new CustomerDetailLayoutController(customerLayout, customerCombo, taxIdCombo, aresButton);
+		customerAdvancedButton.addClickListener(new ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				if(customerController.isHidden()){
+					customerController.showDetail();
+					customerAdvancedButton.setCaption("Hide customer detail");
+				}else{
+					customerController.hideDetail();
+					customerAdvancedButton.setCaption("Show customer detail");
+				}
+			}
+		});
+		
+		customerController.hideDetail();
+		customerAdvancedButton.setPrimaryStyleName("borderless-colored");
+		customerAdvancedButton.setWidth("100%");
+	
+		rightLayout.addComponent(customerLayout);
+		rightLayout.addComponent(customerAdvancedButton);
+
 		
 		layout.addComponent(leftLayout);
 		layout.addComponent(rightLayout);
 		
 		layout.setComponentAlignment(leftLayout, Alignment.TOP_LEFT);
 		layout.setComponentAlignment(rightLayout, Alignment.TOP_RIGHT);
-		layout.setExpandRatio(leftLayout, 2.5f);
+		layout.setExpandRatio(leftLayout, 2.0f);
 		layout.setExpandRatio(rightLayout, 1.0f);
 		
 		return layout;
 	}
 
-	private HorizontalLayout createBankLayout() {
+	private VerticalLayout createBankLayout() {
 		HorizontalLayout layout = new HorizontalLayout();
 		layout.setMargin(false);
 		layout.setSpacing(true);
-		layout.setWidth("340px");
+		//layout.setWidth("340px");
 		
-		VerticalLayout leftLayout = new VerticalLayout();
-		leftLayout.setMargin(false);
-		leftLayout.setSpacing(true);
+		VerticalLayout wrapper = new VerticalLayout();
+		wrapper.setMargin(false);
+		wrapper.setSpacing(true);
+		wrapper.setWidth("100%");
 		
 		Label bankAccount = new Label("Bank account");
-		bankAccount.addStyleName("text-align-center");
-		ComboBox bankAccountText = new ComboBox();
-		TextField ibanText = new TextField();
-		
-		bankAccountText.setInputPrompt("Bank account");
-		ibanText.setInputPrompt("IBAN");
-		
-//		bankAccountText.addStyleName("text-in-form");
-//		ibanText.addStyleName("text-in-form");
-		
-		bankAccount.setWidth("100%");
-		bankAccountText.setWidth("100%");
-		ibanText.setWidth("100%");
-		
-		leftLayout.addComponent(bankAccount);
-		leftLayout.addComponent(bankAccountText);
-		leftLayout.addComponent(ibanText);
-		
-		VerticalLayout rightLayout = new VerticalLayout();
-		rightLayout.setMargin(false);
-		rightLayout.setSpacing(true);
-		
 		Label bankCode  = new Label("Bank code");
-		bankCode.addStyleName("text-align-center");
+		ComboBox bankAccountCombo = new ComboBox();
 		ComboBox bankCodeCombo = new ComboBox();
+		TextField ibanText = new TextField();
 		TextField swiftText = new TextField();
 		
+		bankAccount.addStyleName("text-align-center");
+		bankAccountCombo.setInputPrompt("Bank account");
+		ibanText.setInputPrompt("IBAN");
+		
+		bankAccount.setWidth("100%");
+		bankAccountCombo.setWidth("100%");
+		ibanText.setWidth("100%");
+		
+		bankAccountCombo.addStyleName("bigger-bold");
+		
+		bankCode.addStyleName("text-align-center");
 		bankCodeCombo.setInputPrompt("Bank code");
 		swiftText.setInputPrompt("SWIFT");
 		
@@ -693,19 +633,28 @@ public class FakturaTest extends VerticalLayout{
 		bankCodeCombo.setWidth("100%");
 		swiftText.setWidth("100%");
 		
-//		bankCodeCombo.addStyleName("text-in-form");
-//		swiftText.addStyleName("text-in-form");
+		final Button bankControllButton = new Button("Show bank detail");
+		bankControllButton.setPrimaryStyleName("borderless-colored");
+		bankControllButton.addClickListener(new ClickListener() {
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				if(bankController.isHidden()){
+					bankController.showDetail();
+					bankControllButton.setCaption("Hide bank detail");
+				}else{
+					bankController.hideDetail();
+					bankControllButton.setCaption("Show bank detail");
+				}
+				
+			}
+		});
 		
-		rightLayout.addComponent(bankCode);
-		rightLayout.addComponent(bankCodeCombo);
-		rightLayout.addComponent(swiftText);
+		bankController = new BankDetailLayoutController(layout, wrapper, bankAccount, bankCode, bankAccountCombo, bankCodeCombo, ibanText, swiftText, bankControllButton);
 		
-		layout.addComponent(leftLayout);
-		layout.addComponent(rightLayout);
-		layout.setExpandRatio(leftLayout, 1.5f);
-		layout.setExpandRatio(rightLayout, 1f);
+		bankController.hideDetail();
 		
-		return layout;
+		return wrapper;
 	}
 
 	private HorizontalLayout createInvoiceLayout1() {
@@ -750,7 +699,7 @@ public class FakturaTest extends VerticalLayout{
 		layout.addComponent(leftLayout);
 		layout.addComponent(documentLayout);
 		layout.setExpandRatio(leftLayout, 2.0f);
-		layout.setExpandRatio(documentLayout, 0.7f);
+		layout.setExpandRatio(documentLayout, 1.0f);
 		
 		layout.setComponentAlignment(leftLayout, Alignment.BOTTOM_LEFT);
 		layout.setComponentAlignment(documentLayout, Alignment.BOTTOM_RIGHT);
@@ -763,11 +712,17 @@ public class FakturaTest extends VerticalLayout{
 		//Recipient
 		recipientLayout.addStyleName("default-v-spacing");
 		ComboBox supplierName = new ComboBox();
-		final TextField supplierStreet = new TextField();
+		supplierStreet = new TextField();
 		HorizontalLayout zipCityLayout = new HorizontalLayout();
 		TextField supplierZip = new TextField();
 		TextField supplierCity = new TextField();
 		ComboBox supplierState = new ComboBox();
+		
+		supplierName.setDescription("Suppiler name");
+		supplierZip.setDescription("Suppiler zip");
+		supplierCity.setDescription("Suppiler city");
+		supplierState.setDescription("Suppiler country");
+		supplierStreet.setDescription("Supplier address");
 		
 		supplierStreet.setValidationVisible(false);
 		supplierStreet.addValidator(validator);
@@ -783,7 +738,7 @@ public class FakturaTest extends VerticalLayout{
 		supplierStreet.setWidth("100%");
 		supplierState.setWidth("100%");
 		zipCityLayout.setWidth("100%");
-		supplierZip.setWidth("100%");
+		supplierZip.setWidth("55px");
 		supplierCity.setWidth("100%");
 		
 		supplierName.setInputPrompt("Supplier name");
@@ -802,6 +757,8 @@ public class FakturaTest extends VerticalLayout{
 		
 		zipCityLayout.addComponent(supplierZip);
 		zipCityLayout.addComponent(supplierCity);
+		zipCityLayout.setExpandRatio(supplierZip, 0.3f);
+		zipCityLayout.setExpandRatio(supplierCity, 0.7f);
 		
 		recipientLayout.addComponent(supplierName);
 		recipientLayout.addComponent(supplierStreet);
@@ -815,13 +772,13 @@ public class FakturaTest extends VerticalLayout{
 		vendorId.setInputPrompt("IR");
 		vendorTax.setInputPrompt("Tax");
 		
-		vendorId.setWidth("100%");
+		vendorId.setWidth("110px");
 		vendorTax.setWidth("100%");
 		
 		vendorId.addStyleName("text-in-form");
 		vendorTax.addStyleName("text-in-form");
 		
-		vendorLayout.setWidth("100px");
+		vendorLayout.setWidth("110px");
 		vendorLayout.addComponent(vendorId);
 		vendorLayout.addComponent(vendorTax);
 		
@@ -831,6 +788,8 @@ public class FakturaTest extends VerticalLayout{
 		
 		TextField seqDocument = new TextField();
 		TextField docNumber = new TextField();
+		
+		seqDocument.addStyleName("bigger-bold");
 		
 		seqDocument.setWidth("100%");
 		docNumber.setWidth("100%");

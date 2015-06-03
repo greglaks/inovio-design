@@ -1,4 +1,4 @@
-package com.example.comp;
+package com.example.invoice;
 
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.DateField;
@@ -6,7 +6,7 @@ import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
 
-public class FormAdvancedLayout extends HorizontalLayout {
+public class InvoiceDetailFormLayout extends HorizontalLayout {
 
 	/**
 	 * 
@@ -14,8 +14,8 @@ public class FormAdvancedLayout extends HorizontalLayout {
 	private static final long serialVersionUID = -8908574894356257749L;
 	private boolean isHidden = true;
 	
-	public FormAdvancedLayout(){
-		addStyleName("background-grey");
+	public InvoiceDetailFormLayout(){
+		addStyleName("form-detail");
 		FormLayout f1 = createForm1();
 		FormLayout f2 = createForm2();
 		

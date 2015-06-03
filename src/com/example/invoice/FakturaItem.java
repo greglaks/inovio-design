@@ -1,4 +1,4 @@
-package com.example.comp;
+package com.example.invoice;
 
 import java.text.DecimalFormat;
 
@@ -17,7 +17,7 @@ import com.vaadin.ui.GridLayout.Area;
 public class FakturaItem {
 
 	private GridLayout parent;
-	private Button hideButton;
+	private Button removeButton;
 	private ComboBox item;
 	private TextField quantity;
 	private TextField unit;
@@ -42,10 +42,12 @@ public class FakturaItem {
 
 	private double totalCalc;
 	private double priceCalc;
+	private Button hideButton;
 	
-	public FakturaItem(GridLayout parent, FakturaTest fakturaTest){
+	public FakturaItem(GridLayout parent, FakturaTest fakturaTest, Button hideButton){
 		this.parent = parent;
 		this.fakturaTest = fakturaTest;
+		this.hideButton = hideButton;
 		init();
 	}
 	
@@ -247,8 +249,10 @@ public class FakturaItem {
 	}
 	
 	private void init() {
-		hideButton = new Button("Hide");
-		hideButton.setPrimaryStyleName("danger");
+
+		removeButton = new Button("");
+		removeButton.setPrimaryStyleName("danger");
+		removeButton.addStyleName("remove");
 		item = new ComboBox();
 		quantity = new TextField();
 		unit = new TextField();
@@ -256,7 +260,7 @@ public class FakturaItem {
 		vatComboBox = new ComboBox();
 		total = new TextField();
 		descriptionText = new TextArea();
-		hideButton.addClickListener(new ClickListener() {
+		removeButton.addClickListener(new ClickListener() {
 			
 			@Override
 			public void buttonClick(ClickEvent event) {
@@ -265,6 +269,8 @@ public class FakturaItem {
 				triggerSubtotalOperation();
 			}
 		});
+		
+		
 		
 		quantity.addValueChangeListener(calculateItemListener);
 		priceUnit.addValueChangeListener(calculateItemListener);
@@ -297,14 +303,22 @@ public class FakturaItem {
 		descriptionText.setRows(2);
 		descriptionText.setWidth("100%");
 		
-		hideButton.setWidth("100%");
+		removeButton.setWidth("35px");
 		item.setWidth("100%");
-		quantity.setWidth("100%");
-		unit.setWidth("100%");
-		priceUnit.setWidth("100%");
-		vatComboBox.setWidth("100%");
-		total.setWidth("100%");
+		quantity.setWidth("45px");
+		unit.setWidth("43px");
+		priceUnit.setWidth("80px");
+		vatComboBox.setWidth("80px");
+		total.setWidth("85px");
 		descriptionText.setWidth("100%");
+		
+		parent.setColumnExpandRatio(0, 0);
+		parent.setColumnExpandRatio(1, 1.0f);
+		parent.setColumnExpandRatio(2, 0);
+		parent.setColumnExpandRatio(3, 0);
+		parent.setColumnExpandRatio(4, 0);
+		parent.setColumnExpandRatio(5, 0);
+		parent.setColumnExpandRatio(6, 0);
 		
 		insertBlankRow();
 				
@@ -319,7 +333,7 @@ public class FakturaItem {
 		parent.insertRow(currentRow);
 		parent.insertRow(descriptionRow);
 		
-		parent.addComponent(hideButton, 0, currentRow);
+		parent.addComponent(removeButton, 0, currentRow);
 		parent.addComponent(item, 1, currentRow);
 		parent.addComponent(quantity, 2, currentRow);
 		parent.addComponent(unit, 3, currentRow);
@@ -327,6 +341,11 @@ public class FakturaItem {
 		parent.addComponent(vatComboBox, 5, currentRow);
 		parent.addComponent(total, 6, currentRow);
 		parent.addComponent(descriptionText, 0 , descriptionRow, 6, descriptionRow);
+		if(hideButton.getCaption().equals("Show")){
+			descriptionText.setVisible(false);
+		}else{
+			descriptionText.setVisible(true);			
+		}
 
 	}
 
@@ -378,6 +397,15 @@ public class FakturaItem {
 		return priceCalc;
 	}
 
+	public TextArea getDescriptionText() {
+		return descriptionText;
+	}
+
+	public void setDescriptionText(TextArea descriptionText) {
+		this.descriptionText = descriptionText;
+	}
+
 	
 	
 }
+

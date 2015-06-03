@@ -37,6 +37,9 @@
 	height: auto !important;
 	border:none;
 }
+.total-calculate-table .v-table-caption-container{
+	padding-right:3px !important; 
+}
 .total-calculate-table .v-table-header-wrap{
 	background-image:none !important;
 	border:none;
@@ -51,7 +54,9 @@
 	display:none !important;
 }
 .total-calculate-table .v-table-cell-content{
-	border:none !important;
+	border: none !important;
+	padding: 0 7px !important;
+	padding-left: 5px !important;
 }
 .total-calculate-table .v-table-footer-wrap{
 	background:none !important;
@@ -66,9 +71,7 @@
 	text-align: right !important;
 	padding-right:1px !important;
 }
-.total-calculate-table .v-table-cell-wrapper{
-	padding:5px 1px;
-}
+
 	.myfiltertable.v-table{
 		position:absolute;
 		top:10px;
